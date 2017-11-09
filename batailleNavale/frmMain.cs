@@ -27,7 +27,7 @@ namespace batailleNavale
         string notification = "";
         string listElements = "";
         int opponentScore = 0;
-        int test = 0;
+        
         int score = 0;
         bool myTurn = false;
         bool opponentReady = false;
@@ -82,8 +82,6 @@ namespace batailleNavale
         /// Retourne l'adresse ip de la machine
         /// </summary>
         /// <returns> l'adresse ip de la machine </returns>
-
-
         private string listToString(List<string> list)
         {
             foreach (var element in list)
@@ -127,7 +125,6 @@ namespace batailleNavale
                         if (dataWOType == "Prêt")
                         {
                             opponentReady = true;
-
                         }
                         break;
                     case "elm":
@@ -830,6 +827,7 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
+                btnReset.Enabled = true;
                 btnReset.PerformClick();
             }
         }
