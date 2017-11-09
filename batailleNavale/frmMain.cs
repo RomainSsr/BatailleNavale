@@ -121,7 +121,6 @@ namespace batailleNavale
                 {
                     case "sht":
                         receivedTag = dataWOType;
-                        tmrAutoShoot.Start();
 
                         break;
                     case "not":
@@ -326,7 +325,6 @@ namespace batailleNavale
                 myTurn = false;
                 client.WriteLine("trn" + "true");
                 lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
-               // tmrAutoShoot.Stop();
             }
         }
 
@@ -335,6 +333,7 @@ namespace batailleNavale
         /// </summary>
         private void Shoot()
         {
+            tmrAutoShoot.Start();
             string tag = receivedTag;
             tlpOpponentGrid.Invoke((MethodInvoker)delegate ()
             {
