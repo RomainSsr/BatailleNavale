@@ -134,6 +134,7 @@ namespace batailleNavale
                         if (!gameEnded)
                         {
                             myTurn = true;
+                            tmrAutoShoot.Enabled = true;
                             tmrAutoShoot.Start();
                             lblMessages.Invoke((MethodInvoker)delegate ()
                             {
