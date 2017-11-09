@@ -27,7 +27,7 @@ namespace batailleNavale
         string notification = "";
         string listElements = "";
         int opponentScore = 0;
-
+        int test = 0;
         int score = 0;
         bool myTurn = false;
         bool opponentReady = false;
