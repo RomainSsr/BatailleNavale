@@ -56,6 +56,8 @@ namespace batailleNavale
         List<string> listpositionSousMarinToSink = new List<string>();
         List<string> listpositionTorpilleurToSink = new List<string>();
 
+        List<Button> listOfAvailableButton = new List<Button>();
+
 
         public frmMain()
         {
@@ -220,6 +222,7 @@ namespace batailleNavale
                     btn.Dock = DockStyle.Fill;
                     btn.BackColor = Button.DefaultBackColor;
                     btn.Click += btn_Click;
+                    listOfAvailableButton.Add(btn);
                     this.tlpOpponentGrid.Controls.Add(btn);
                 }
             }
@@ -936,14 +939,13 @@ namespace batailleNavale
         {
             if (cmptBtnToShoot == 1)
             {
-                foreach (Button button in tlpOpponentGrid.Controls.OfType<Button>())
+                foreach (Button button in listOfAvailableButton)
                 {
-                    string randButton = (char)rndButtonToShoot.Next(65, 74) + rndButtonToShoot.Next(1, 11).ToString();
+                    string randButton = (char)rndButtonToShoot.Next(65, 75) + rndButtonToShoot.Next(1, 11).ToString();
                     if (randButton == button.Tag.ToString() && button.Enabled)
                     {
                         if (myTurn)
                         {
-                            
                             client.WriteLine("sht" + button.Tag.ToString());
                             tempTag = button.Tag.ToString();
                         }
@@ -952,7 +954,8 @@ namespace batailleNavale
                             myTurn = false;
                             client.WriteLine("trn" + "true");
                             lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
-                            tmrAutoShoot.Stop();
+                            listOfAvailableButton.Remove(button);
+                           // tmrAutoShoot.Stop();
                         }
                     }
                 }
