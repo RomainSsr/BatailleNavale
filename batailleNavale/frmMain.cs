@@ -309,7 +309,6 @@ namespace batailleNavale
         /// <param name="e"> évènements du bouton </param>
         private void btn_Click(object sender, EventArgs e)
         {
-            Thread.Sleep(100);
             if (myTurn)
             {
                 Button btn = sender as Button;
@@ -827,6 +826,7 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
+                //ici ça change
                 Controls.Clear();
                 InitializeComponent();
                 initializeAllGrids();
@@ -940,7 +940,19 @@ namespace batailleNavale
                     string randButton = (char)rndButtonToShoot.Next(65, 74) + rndButtonToShoot.Next(1, 11).ToString();
                     if (randButton == button.Tag.ToString() && button.Enabled)
                     {
-                        button.PerformClick();
+                        if (myTurn)
+                        {
+                            
+                            client.WriteLine("sht" + button.Tag.ToString());
+                            tempTag = button.Tag.ToString();
+                        }
+                        if (myTurn)
+                        {
+                            myTurn = false;
+                            client.WriteLine("trn" + "true");
+                            lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
+                            tmrAutoShoot.Stop();
+                        }
                     }
                 }
                 cmptBtnToShoot = 0;
