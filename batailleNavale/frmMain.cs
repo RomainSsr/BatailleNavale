@@ -819,6 +819,7 @@ namespace batailleNavale
                 btnReset.Enabled = false;
                 tmrScore.Start();
                 tmrReady.Start();
+                tmrAutoShoot.Start();
                 if (opponentReady)
                 {
                     myTurn = false;
