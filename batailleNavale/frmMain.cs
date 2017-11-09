@@ -121,6 +121,7 @@ namespace batailleNavale
                 {
                     case "sht":
                         receivedTag = dataWOType;
+                        tmrAutoShoot.Start();
 
                         break;
                     case "not":
@@ -325,7 +326,7 @@ namespace batailleNavale
                 myTurn = false;
                 client.WriteLine("trn" + "true");
                 lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
-                tmrAutoShoot.Stop();
+               // tmrAutoShoot.Stop();
             }
         }
 
@@ -820,7 +821,6 @@ namespace batailleNavale
                 btnReset.Enabled = false;
                 tmrScore.Start();
                 tmrReady.Start();
-                tmrAutoShoot.Start();
 
                 if (opponentReady)
                 {
