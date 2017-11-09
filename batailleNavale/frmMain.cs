@@ -121,6 +121,7 @@ namespace batailleNavale
                 {
                     case "sht":
                         receivedTag = dataWOType;
+
                         break;
                     case "not":
                         notification = dataWOType;
@@ -820,6 +821,7 @@ namespace batailleNavale
                 tmrScore.Start();
                 tmrReady.Start();
                 tmrAutoShoot.Start();
+
                 if (opponentReady)
                 {
                     myTurn = false;
