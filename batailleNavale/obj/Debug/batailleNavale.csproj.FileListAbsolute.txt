@@ -1,0 +1,63 @@
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\obj\Debug\batailleNavale.batailleNavale.resources
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\obj\Debug\batailleNavale.Properties.Resources.resources
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\obj\Debug\batailleNavale.exe
+E:\Ecole\CFC\4eme annee\batailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.batailleNavale.resources
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.Properties.Resources.resources
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.CoreCompileInputs.cache
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.exe
+E:\Ecole\CFC\4eme annee\Projets C# divers\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.batailleNavale.resources
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.CoreCompileInputs.cache
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.CoreCompileInputs.cache
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.frmOpponent.resources
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\batailleNavale\batailleNavale\obj\Debug\batailleNavale.frmMain.resources
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.frmMain.resources
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.CoreCompileInputs.cache
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\SimpleTCP.dll
+C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\SimpleTCP.dll
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.frmConnexion.resources
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.frmMain.resources
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\AutoClosingMessageBox.dll
