@@ -827,8 +827,20 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-                btnReset.Enabled = true;
-                btnReset.PerformClick();
+                Controls.Clear();
+                InitializeComponent();
+                initializeAllGrids();
+                btnReadyAndNewGame.Enabled = false;
+                listPorteAvion.Clear();
+                listCroiseur.Clear();
+                listContreTorpilleur.Clear();
+                listSousMarin.Clear();
+                listTorpilleur.Clear();
+                listpositionPorteAvionToSink.Clear();
+                listpositionCroiseurToSink.Clear();
+                listpositionContreTorpilleurToSink.Clear();
+                listpositionSousMarinToSink.Clear();
+                listpositionTorpilleurToSink.Clear();
             }
         }
 
