@@ -942,23 +942,22 @@ namespace batailleNavale
                 foreach (Button button in listOfAvailableButton)
                 {
                     int randButtonIndex = rndButtonToShoot.Next(1, listOfAvailableButton.Count);
-                    if (listOfAvailableButton[randButtonIndex].Tag == button.Tag && button.Enabled)
-                    {
+                    
                         if (myTurn)
                         {
-                            client.WriteLine("sht" + button.Tag.ToString());
-                            tempTag = button.Tag.ToString();
+                            client.WriteLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
+                            tempTag = listOfAvailableButton[randButtonIndex].Tag.ToString();
                         }
                         if (myTurn)
                         {
                             myTurn = false;
                             client.WriteLine("trn" + "true");
                             lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
-                            listOfAvailableButton.Remove(button);
+                            listOfAvailableButton.RemoveAt(randButtonIndex);
                             break;
                            // tmrAutoShoot.Stop();
                         }
-                    }
+                    
                 }
                 cmptBtnToShoot = 0;
             }
