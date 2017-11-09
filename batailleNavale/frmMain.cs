@@ -941,8 +941,8 @@ namespace batailleNavale
             {
                 foreach (Button button in listOfAvailableButton)
                 {
-                    string randButton = (char)rndButtonToShoot.Next(65, 75) + rndButtonToShoot.Next(1, 11).ToString();
-                    if (randButton == button.Tag.ToString() && button.Enabled)
+                    int randButtonIndex = rndButtonToShoot.Next(1, listOfAvailableButton.Count);
+                    if (listOfAvailableButton[randButtonIndex].Tag == button.Tag && button.Enabled)
                     {
                         if (myTurn)
                         {
@@ -955,6 +955,7 @@ namespace batailleNavale
                             client.WriteLine("trn" + "true");
                             lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
                             listOfAvailableButton.Remove(button);
+                            break;
                            // tmrAutoShoot.Stop();
                         }
                     }
