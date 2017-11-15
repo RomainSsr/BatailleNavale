@@ -951,14 +951,14 @@ namespace batailleNavale
                         if (myTurn)
                         {
                             client.WriteLine("sht" + listOfAvailableButton[randButtonIndex-1].Tag.ToString());
-                            tempTag = listOfAvailableButton[randButtonIndex].Tag.ToString();
+                            tempTag = listOfAvailableButton[randButtonIndex-1].Tag.ToString();
                         }
                         if (myTurn)
                         {
                             myTurn = false;
                             client.WriteLine("trn" + "true");
                             lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
-                            listOfAvailableButton.RemoveAt(randButtonIndex);
+                            listOfAvailableButton.RemoveAt(randButtonIndex-1);
                             break;
                             // tmrAutoShoot.Stop();
                         }
