@@ -942,7 +942,7 @@ namespace batailleNavale
         {
             if (tmrAutoShootEnable)
             {
-                if (cmptBtnToShoot == 1)
+                if (cmptBtnToShoot >= 1 && myTurn)
                 {
                     foreach (Button button in listOfAvailableButton)
                     {
@@ -950,7 +950,7 @@ namespace batailleNavale
 
                         if (myTurn)
                         {
-                            client.WriteLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
+                            client.WriteLine("sht" + listOfAvailableButton[randButtonIndex-1].Tag.ToString());
                             tempTag = listOfAvailableButton[randButtonIndex].Tag.ToString();
                         }
                         if (myTurn)
