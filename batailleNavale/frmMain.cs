@@ -334,7 +334,7 @@ namespace batailleNavale
         /// </summary>
         private void Shoot()
         {
-            tmrAutoShootEnable = true;
+            //tmrAutoShootEnable = true;
             string tag = receivedTag;
             tlpOpponentGrid.Invoke((MethodInvoker)delegate ()
             {
@@ -838,6 +838,7 @@ namespace batailleNavale
                 InitializeComponent();
                 initializeAllGrids();
                 btnReadyAndNewGame.Enabled = false;
+                tmrAutoShootEnable = false;
                 listPorteAvion.Clear();
                 listCroiseur.Clear();
                 listContreTorpilleur.Clear();
@@ -946,22 +947,26 @@ namespace batailleNavale
                 {
                     foreach (Button button in listOfAvailableButton)
                     {
-                        int randButtonIndex = rndButtonToShoot.Next(1, listOfAvailableButton.Count);
-
-                        if (myTurn)
+                          int randButtonIndex = rndButtonToShoot.Next(1, listOfAvailableButton.Count);
+                        if (listOfAvailableButton.Count <= 1)
                         {
-                            client.WriteLine("sht" + listOfAvailableButton[randButtonIndex-1].Tag.ToString());
-                            tempTag = listOfAvailableButton[randButtonIndex-1].Tag.ToString();
+                            randButtonIndex = 0;
                         }
-                        if (myTurn)
-                        {
-                            myTurn = false;
-                            client.WriteLine("trn" + "true");
-                            lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
-                            listOfAvailableButton.RemoveAt(randButtonIndex-1);
-                            break;
-                            // tmrAutoShoot.Stop();
-                        }
+                            if (myTurn)
+                            {
+                                client.WriteLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
+                                tempTag = listOfAvailableButton[randButtonIndex].Tag.ToString();
+                            }
+                            if (myTurn)
+                            {
+                                myTurn = false;
+                                client.WriteLine("trn" + "true");
+                                lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
+                                listOfAvailableButton.RemoveAt(randButtonIndex);
+                                break;
+                                // tmrAutoShoot.Stop();
+                            }
+                        
 
                     }
                     cmptBtnToShoot = 0;
