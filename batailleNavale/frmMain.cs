@@ -147,9 +147,6 @@ namespace batailleNavale
                         }
                         else
                         {
-                            tmrAutoShootEnable = false;
-                            cmptTimeToShoot = 60;
-                            opponentReady = false;
                             myTurn = false;
                         }
 
@@ -842,6 +839,8 @@ namespace batailleNavale
                 initializeAllGrids();
                 btnReadyAndNewGame.Enabled = false;
                 tmrAutoShootEnable = false;
+                cmptTimeToShoot = 60;
+                opponentReady = false;
                 listPorteAvion.Clear();
                 listCroiseur.Clear();
                 listContreTorpilleur.Clear();
