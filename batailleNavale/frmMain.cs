@@ -841,6 +841,7 @@ namespace batailleNavale
                 tmrAutoShootEnable = false;
                 cmptTimeToShoot = 60;
                 opponentReady = false;
+                gameEnded = false;
                 listPorteAvion.Clear();
                 listCroiseur.Clear();
                 listContreTorpilleur.Clear();
