@@ -22,6 +22,7 @@ namespace batailleNavale
 
         Random rndButtonToShoot = new Random();
 
+
         string tempTag = "";
         string receivedTag = "";
         string notification = "";
@@ -507,6 +508,7 @@ namespace batailleNavale
                 {
                     btnReadyAndNewGame.Enabled = true;
                 });
+                tmrAutoShootEnable = false;
                 myTurn = true;
                 gameEnded = true;
             }
@@ -540,6 +542,7 @@ namespace batailleNavale
                 {
                     btnReadyAndNewGame.Enabled = true;
                 });
+                tmrAutoShootEnable = false;
                 gameEnded = true;
             }
         }
@@ -837,11 +840,14 @@ namespace batailleNavale
                 Controls.Clear();
                 InitializeComponent();
                 initializeAllGrids();
+                tmrReady.Start();
                 btnReadyAndNewGame.Enabled = false;
                 tmrAutoShootEnable = false;
                 cmptTimeToShoot = 60;
                 opponentReady = false;
                 gameEnded = false;
+                score = 0;
+                opponentScore = 0;
                 listPorteAvion.Clear();
                 listCroiseur.Clear();
                 listContreTorpilleur.Clear();
