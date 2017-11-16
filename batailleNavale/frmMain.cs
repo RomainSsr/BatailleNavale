@@ -334,7 +334,6 @@ namespace batailleNavale
         /// </summary>
         private void Shoot()
         {
-            tmrAutoShootEnable = false;
             string tag = receivedTag;
             tlpOpponentGrid.Invoke((MethodInvoker)delegate ()
             {
@@ -975,6 +974,7 @@ namespace batailleNavale
 
 
                         }
+                        tmrAutoShootEnable = false;
                         cmptBtnToShoot = 0;
                         cmptTimeToShoot = 0;
                     }
