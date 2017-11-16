@@ -120,18 +120,6 @@
   <metadata name="tmrScore.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>L’application « Bataille Navale » est un jeu qui se joue à deux joueurs. Chaque joueur dispose de sa propre grille sur laquelle il doit placer ses bateaux en début de partie mais aussi d’une grille supplémentaire qui permet d’envoyer un tir par tour contre l’adversaire. 
-Dans un premier temps, les joueurs doivent placer leurs bateaux sur leurs grilles. Une fois cette opération terminée, le bouton « Prêt » devient actif. Dès que chacun des deux joueurs a cliqué sur ce bouton, la partie démarre automatiquement. 
-
-Le joueur qui lance l’application en premier est considéré comme le joueur 1, c’est donc lui qui va commencer à jouer. Chaque joueur ne peut tirer qu’une fois par tour même si son tir touche. Le joueur dispose d’une limite de 60 seconde pour tirer. Si le joueur ne tire pas, l’application tire pour lui sur une case au hasard parmi les cases restantes. Pour tirer, le joueur doit cliquer sur une case de la grille de gauche. Un message s’affiche en bas de l’écran pour informer le joueur de l’effet de son tir : « touché », « coulé » ou « dans l’eau ». La case change de couleur en fonction de l’effet de son tir : rouge pour « touché », une croix blanche dans la case rouge pour « coulé », et gris pour « dans l’eau ».
- 
-Le score des joueurs s’affiche en bas de l’écran. À chaque bateau touché, le joueur obtient un point et pour chaque bateau coulé, le joueur obtient 5 points. La partie se termine lorsqu’un joueur atteint 42 points. 
-
-Un bouton « Quitter » permet à chaque joueur de quitter la partie s’il le souhaite. Si un joueur quitte une partie en cours, son adversaire est déclaré vainqueur. 
-
-À la fin de la partie, le joueur a 60 secondes pour faire une action. Il peut décider de rejouer une partie en cliquant sur « Nouvelle partie » ou de quitter l’application en cliquant sur « Quitter ». Si le joueur n’a rien fait au bout des 60 secondes allouées, l’application se ferme pour libérer l’espace.  S’il décide de lancer une nouvelle partie, l’écran de départ s’affiche et il peut d’ores et déjà placer ses bateaux. Si son adversaire a également cliqué sur nouvelle partie, ils rejouent ensemble sinon, le joueur doit attendre un adversaire.</value>
-  </data>
   <metadata name="tmrReady.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>118, 17</value>
   </metadata>

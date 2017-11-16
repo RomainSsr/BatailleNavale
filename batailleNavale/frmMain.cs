@@ -37,7 +37,7 @@ namespace batailleNavale
         int boatTag = 0;
         int cmptBtn = 0;
         int cmptBtnToShoot = 0;
-        int cmptTimeToShoot = 0;
+        int cmptTimeToShoot = 60;
         string boatText = "";
         const int ROW_COUNT = 10;
         const int COLUMN_COUNT = 10;
@@ -513,7 +513,7 @@ namespace batailleNavale
             notification = "";
             listElements = "";
             tempTag = "";
-            cmptTimeToShoot = 0;
+            cmptTimeToShoot = 60;
         }
 
         /// <summary>
@@ -945,11 +945,12 @@ namespace batailleNavale
 
         private void tmrAutoShoot_Tick(object sender, EventArgs e)
         {
+            lblTimeToShoot.Text = String.Format("Il vous reste {0} seconde(s) pour jouer",cmptTimeToShoot);
             if (tmrAutoShootEnable)
             {
                 if (myTurn)
                 {
-                    if (cmptBtnToShoot >= 1 && cmptTimeToShoot == 10)
+                    if (cmptBtnToShoot >= 1 && cmptTimeToShoot == 0)
                     {
                         foreach (Button button in listOfAvailableButton)
                         {
@@ -977,10 +978,10 @@ namespace batailleNavale
                         }
                         tmrAutoShootEnable = false;
                         cmptBtnToShoot = 0;
-                        cmptTimeToShoot = 0;
+                        cmptTimeToShoot = 60;
                     }
 
-                    cmptTimeToShoot++;
+                    cmptTimeToShoot--;
                 }
                 cmptBtnToShoot++;
             }

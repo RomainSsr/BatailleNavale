@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tlpOpponentGrid = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
@@ -52,11 +51,10 @@
             this.tbxMessage = new System.Windows.Forms.TextBox();
             this.lsbMessages = new System.Windows.Forms.ListBox();
             this.btnSendMessage = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tmrReady = new System.Windows.Forms.Timer(this.components);
             this.tmrAutoShoot = new System.Windows.Forms.Timer(this.components);
+            this.lblTimeToShoot = new System.Windows.Forms.Label();
             this.pnlRight.SuspendLayout();
             this.gbChat.SuspendLayout();
             this.SuspendLayout();
@@ -372,28 +370,6 @@
             this.btnSendMessage.UseVisualStyleBackColor = true;
             this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(51, 637);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(455, 318);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 609);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Règles du jeu";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -411,17 +387,24 @@
             // tmrAutoShoot
             // 
             this.tmrAutoShoot.Enabled = true;
-            this.tmrAutoShoot.Interval = 500;
+            this.tmrAutoShoot.Interval = 1000;
             this.tmrAutoShoot.Tick += new System.EventHandler(this.tmrAutoShoot_Tick);
+            // 
+            // lblTimeToShoot
+            // 
+            this.lblTimeToShoot.AutoSize = true;
+            this.lblTimeToShoot.Location = new System.Drawing.Point(453, 624);
+            this.lblTimeToShoot.Name = "lblTimeToShoot";
+            this.lblTimeToShoot.Size = new System.Drawing.Size(0, 13);
+            this.lblTimeToShoot.TabIndex = 19;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 973);
+            this.Controls.Add(this.lblTimeToShoot);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.gbChat);
             this.Controls.Add(this.lblMessages);
             this.Controls.Add(this.tlpLettersPersonal);
@@ -470,11 +453,10 @@
         private System.Windows.Forms.ListBox lsbMessages;
         private System.Windows.Forms.Button btnSendMessage;
         private System.Windows.Forms.TextBox tbxMessage;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer tmrReady;
         private System.Windows.Forms.Timer tmrAutoShoot;
+        private System.Windows.Forms.Label lblTimeToShoot;
     }
 }
 
