@@ -513,6 +513,7 @@ namespace batailleNavale
             notification = "";
             listElements = "";
             tempTag = "";
+            cmptTimeToShoot = 0;
         }
 
         /// <summary>
