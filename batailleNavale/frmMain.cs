@@ -147,6 +147,9 @@ namespace batailleNavale
                         }
                         else
                         {
+                            tmrAutoShootEnable = false;
+                            cmptTimeToShoot = 60;
+                            opponentReady = false;
                             myTurn = false;
                         }
 
@@ -834,7 +837,6 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-                //ici ça change
                 Controls.Clear();
                 InitializeComponent();
                 initializeAllGrids();
