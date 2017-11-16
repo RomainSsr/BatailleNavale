@@ -507,6 +507,7 @@ namespace batailleNavale
                 {
                     btnReadyAndNewGame.Enabled = true;
                 });
+                myTurn = true;
                 gameEnded = true;
             }
             receivedTag = "";
@@ -812,9 +813,9 @@ namespace batailleNavale
         private void btnReadyAndNewGame_Click(object sender, EventArgs e)
         {
 
-            client.WriteLine("not" + "Prêt");
             if (btnReadyAndNewGame.Text == "Prêt")
             {
+                client.WriteLine("not" + "Prêt");
                 lblMessages.Text = "En attente de l'autre joueur ...";
                 btnReadyAndNewGame.Text = "Nouvelle Partie";
                 btnReadyAndNewGame.Enabled = false;
@@ -849,15 +850,6 @@ namespace batailleNavale
                 listpositionContreTorpilleurToSink.Clear();
                 listpositionSousMarinToSink.Clear();
                 listpositionTorpilleurToSink.Clear();
-
-                if (opponentReady)
-                {
-                    myTurn = false;
-                }
-                else
-                {
-                    myTurn = true;
-                }
             }
         }
 
