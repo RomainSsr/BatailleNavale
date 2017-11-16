@@ -138,8 +138,7 @@ namespace batailleNavale
                         if (!gameEnded)
                         {
                             myTurn = true;
-                            tmrAutoShoot.Enabled = true;
-                            tmrAutoShoot.Start();
+                            tmrAutoShootEnable = true;
                             lblMessages.Invoke((MethodInvoker)delegate ()
                             {
                                 lblMessages.Text = "À VOTRE TOUR !";
@@ -334,7 +333,7 @@ namespace batailleNavale
         /// </summary>
         private void Shoot()
         {
-            //tmrAutoShootEnable = true;
+            tmrAutoShootEnable = false;
             string tag = receivedTag;
             tlpOpponentGrid.Invoke((MethodInvoker)delegate ()
             {
@@ -871,9 +870,13 @@ namespace batailleNavale
             });
 
             if (myTurn)
+            {
                 lblMessages.Text = "La partie peut commencer !" + Environment.NewLine + "À VOTRE TOUR !";
+                tmrAutoShootEnable = true;
+            }
             else
                 lblMessages.Text = "La partie peut commencer !" + Environment.NewLine + "AU TOUR DE L'ADVERSAIRE !";
+
 
         }
 
@@ -947,26 +950,26 @@ namespace batailleNavale
                 {
                     foreach (Button button in listOfAvailableButton)
                     {
-                          int randButtonIndex = rndButtonToShoot.Next(1, listOfAvailableButton.Count);
+                        int randButtonIndex = rndButtonToShoot.Next(1, listOfAvailableButton.Count);
                         if (listOfAvailableButton.Count <= 1)
                         {
                             randButtonIndex = 0;
                         }
-                            if (myTurn)
-                            {
-                                client.WriteLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
-                                tempTag = listOfAvailableButton[randButtonIndex].Tag.ToString();
-                            }
-                            if (myTurn)
-                            {
-                                myTurn = false;
-                                client.WriteLine("trn" + "true");
-                                lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
-                                listOfAvailableButton.RemoveAt(randButtonIndex);
-                                break;
-                                // tmrAutoShoot.Stop();
-                            }
-                        
+                        if (myTurn)
+                        {
+                            client.WriteLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
+                            tempTag = listOfAvailableButton[randButtonIndex].Tag.ToString();
+                        }
+                        if (myTurn)
+                        {
+                            myTurn = false;
+                            client.WriteLine("trn" + "true");
+                            lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
+                            listOfAvailableButton.RemoveAt(randButtonIndex);
+                            break;
+                            // tmrAutoShoot.Stop();
+                        }
+
 
                     }
                     cmptBtnToShoot = 0;
