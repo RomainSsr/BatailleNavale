@@ -865,29 +865,28 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-                this.Refresh();
-                //Controls.Clear();
-                //InitializeComponent();
-                //initializeAllGrids();
-                //tmrReady.Start();
-                //DefaultVarValues();
-                //btnReadyAndNewGame.Enabled = false;
-                //tmrAutoShootEnable = false;
-                //cmptTimeToShoot = 60;
-                //opponentReady = false;
-                //gameEnded = false;
-                //score = 0;
-                //opponentScore = 0;
-                //listPorteAvion.Clear();
-                //listCroiseur.Clear();
-                //listContreTorpilleur.Clear();
-                //listSousMarin.Clear();
-                //listTorpilleur.Clear();
-                //listpositionPorteAvionToSink.Clear();
-                //listpositionCroiseurToSink.Clear();
-                //listpositionContreTorpilleurToSink.Clear();
-                //listpositionSousMarinToSink.Clear();
-                //listpositionTorpilleurToSink.Clear();
+                Controls.Clear();
+                InitializeComponent();
+                initializeAllGrids();
+                tmrReady.Start();
+                DefaultVarValues();
+                /*btnReadyAndNewGame.Enabled = false;
+                tmrAutoShootEnable = false;
+                cmptTimeToShoot = 60;
+                opponentReady = false;
+                gameEnded = false;
+                score = 0;
+                opponentScore = 0;*/
+                listPorteAvion.Clear();
+                listCroiseur.Clear();
+                listContreTorpilleur.Clear();
+                listSousMarin.Clear();
+                listTorpilleur.Clear();
+                listpositionPorteAvionToSink.Clear();
+                listpositionCroiseurToSink.Clear();
+                listpositionContreTorpilleurToSink.Clear();
+                listpositionSousMarinToSink.Clear();
+                listpositionTorpilleurToSink.Clear();
             }
         }
 
