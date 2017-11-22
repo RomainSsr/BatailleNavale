@@ -793,7 +793,11 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Controls.Clear();
+            frmMain f = new frmMain();
+            this.Hide();
+            f.Show();
+            this.Dispose();
+            /*Controls.Clear();
             InitializeComponent();
             initializeAllGrids();
             btnReadyAndNewGame.Enabled = false;
@@ -806,7 +810,7 @@ namespace batailleNavale
             listpositionCroiseurToSink.Clear();
             listpositionContreTorpilleurToSink.Clear();
             listpositionSousMarinToSink.Clear();
-            listpositionTorpilleurToSink.Clear();
+            listpositionTorpilleurToSink.Clear();*/
         }
 
         /// <summary>
@@ -848,6 +852,7 @@ namespace batailleNavale
                 btnReset.Enabled = false;
                 tmrScore.Start();
                 tmrReady.Start();
+                tmrAutoShoot.Interval = 1000;
 
                 if (opponentReady)
                 {
