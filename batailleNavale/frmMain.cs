@@ -45,6 +45,29 @@ namespace batailleNavale
         bool isVertical = false;
         int lineBreak = COLUMN_COUNT;
 
+        public void DefaultVarValues()
+        {
+            tempTag = "";
+            receivedTag = "";
+            notification = "";
+            listElements = "";
+            opponentScore = 0;
+
+            score = 0;
+            myTurn = false;
+            opponentReady = false;
+            gameEnded = false;
+            closingMessageShown = false;
+            tmrAutoShootEnable = false;
+            boatTag = 0;
+            cmptBtn = 0;
+            cmptBtnToShoot = 0;
+            cmptTimeToShoot = 60;
+            boatText = "";
+            isVertical = false;
+            lineBreak = COLUMN_COUNT;
+        }
+
         // listes des positions des bateaux -> sera vidée au fur et à mesure des tirs
         List<string> listPorteAvion = new List<string>();
         List<string> listCroiseur = new List<string>();
@@ -841,13 +864,14 @@ namespace batailleNavale
                 InitializeComponent();
                 initializeAllGrids();
                 tmrReady.Start();
-                btnReadyAndNewGame.Enabled = false;
+                DefaultVarValues();
+                /*btnReadyAndNewGame.Enabled = false;
                 tmrAutoShootEnable = false;
                 cmptTimeToShoot = 60;
                 opponentReady = false;
                 gameEnded = false;
                 score = 0;
-                opponentScore = 0;
+                opponentScore = 0;*/
                 listPorteAvion.Clear();
                 listCroiseur.Clear();
                 listContreTorpilleur.Clear();
