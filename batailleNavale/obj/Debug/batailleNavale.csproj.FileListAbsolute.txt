@@ -61,9 +61,7 @@ C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\bat
 C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
 C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
 C:\Users\SAUSERR_INFO\Desktop\Comminot\Bataille Navale C#\dev\batailleNavale\batailleNavale\bin\Debug\AutoClosingMessageBox.dll
-C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.exe
-C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\AutoClosingMessageBox.dll
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\SimpleTCP.dll
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
@@ -73,3 +71,5 @@ C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\b
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\batailleNavale.exe
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb

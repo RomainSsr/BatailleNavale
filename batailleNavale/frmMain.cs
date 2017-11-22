@@ -35,6 +35,7 @@ namespace batailleNavale
         bool gameEnded = false;
         bool closingMessageShown = false;
         bool tmrAutoShootEnable = false;
+        bool wantNewGame = false;
         int boatTag = 0;
         int cmptBtn = 0;
         int cmptBtnToShoot = 0;
@@ -793,10 +794,15 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
+            wantNewGame = true;
             frmMain f = new frmMain();
             this.Hide();
-            f.Show();
             this.Dispose();
+            f.Show();
+            f.Controls.Clear();
+            f.InitializeComponent();
+            f.initializeAllGrids();
+
             /*Controls.Clear();
             InitializeComponent();
             initializeAllGrids();
@@ -963,7 +969,7 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!closingMessageShown)
+            if (!closingMessageShown && !wantNewGame)
             {
                 DialogResult dr = MessageBox.Show("Voulez-vous vraiment quitter / abandonner ? ", "Quitter l'application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.No)
