@@ -360,7 +360,7 @@ namespace batailleNavale
         private void Shoot()
         {
             string tag = receivedTag;
-            tlpOpponentGrid.Invoke((MethodInvoker)delegate ()
+            tlpOpponentGrid.Invoke(( MethodInvoker)delegate ()
             {
                 tlpOpponentGrid.Enabled = true;
             });
@@ -794,18 +794,12 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
-            wantNewGame = true;
-            frmMain f = new frmMain();
-            this.Hide();
-            this.Dispose();
-            f.Show();
-            f.Controls.Clear();
-            f.InitializeComponent();
-            f.initializeAllGrids();
 
-            /*Controls.Clear();
+
+            Controls.Clear();
             InitializeComponent();
             initializeAllGrids();
+            
             btnReadyAndNewGame.Enabled = false;
             listPorteAvion.Clear();
             listCroiseur.Clear();
@@ -816,7 +810,7 @@ namespace batailleNavale
             listpositionCroiseurToSink.Clear();
             listpositionContreTorpilleurToSink.Clear();
             listpositionSousMarinToSink.Clear();
-            listpositionTorpilleurToSink.Clear();*/
+            listpositionTorpilleurToSink.Clear();
         }
 
         /// <summary>
@@ -858,7 +852,7 @@ namespace batailleNavale
                 btnReset.Enabled = false;
                 tmrScore.Start();
                 tmrReady.Start();
-                tmrAutoShoot.Interval = 1000;
+                this.tmrAutoShoot.Tick += new System.EventHandler(this.tmrAutoShoot_Tick);
 
                 if (opponentReady)
                 {
@@ -871,28 +865,38 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-                Controls.Clear();
-                InitializeComponent();
-                initializeAllGrids();
-                tmrReady.Start();
-                DefaultVarValues();
-                /*btnReadyAndNewGame.Enabled = false;
-                tmrAutoShootEnable = false;
-                cmptTimeToShoot = 60;
-                opponentReady = false;
-                gameEnded = false;
-                score = 0;
-                opponentScore = 0;*/
-                listPorteAvion.Clear();
-                listCroiseur.Clear();
-                listContreTorpilleur.Clear();
-                listSousMarin.Clear();
-                listTorpilleur.Clear();
-                listpositionPorteAvionToSink.Clear();
-                listpositionCroiseurToSink.Clear();
-                listpositionContreTorpilleurToSink.Clear();
-                listpositionSousMarinToSink.Clear();
-                listpositionTorpilleurToSink.Clear();
+
+                wantNewGame = true;
+                frmMain f = new frmMain();
+                this.Hide();
+                this.Close();
+                f.ShowDialog();
+                f.Controls.Clear();
+                f.InitializeComponent();
+                f.initializeAllGrids();
+
+                //Controls.Clear();
+                //InitializeComponent();
+                //initializeAllGrids();
+                //tmrReady.Start();
+                //DefaultVarValues();
+                //btnReadyAndNewGame.Enabled = false;
+                //tmrAutoShootEnable = false;
+                //cmptTimeToShoot = 60;
+                //opponentReady = false;
+                //gameEnded = false;
+                //score = 0;
+                //opponentScore = 0;
+                //listPorteAvion.Clear();
+                //listCroiseur.Clear();
+                //listContreTorpilleur.Clear();
+                //listSousMarin.Clear();
+                //listTorpilleur.Clear();
+                //listpositionPorteAvionToSink.Clear();
+                //listpositionCroiseurToSink.Clear();
+                //listpositionContreTorpilleurToSink.Clear();
+                //listpositionSousMarinToSink.Clear();
+                //listpositionTorpilleurToSink.Clear();
             }
         }
 
