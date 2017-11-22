@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoClosingMessageBox, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoClosingMessageBox.1.0.0.1\lib\net40\AutoClosingMessageBox.dll</HintPath>
+    <Reference Include="AutoClosingMessageBox, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoClosingMessageBox.1.0.0.2\lib\net40\AutoClosingMessageBox.dll</HintPath>
     </Reference>
     <Reference Include="SimpleTCP, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleTCP.1.0.24\lib\net45\SimpleTCP.dll</HintPath>
