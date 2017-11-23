@@ -886,14 +886,13 @@ namespace batailleNavale
                 {
                     myTurn = true;
                 }
-<<<<<<< HEAD
-                if (isNewGame)
-                {
-                    f.isNewGame = false;
-                    this.Dispose();
-                }
-=======
->>>>>>> parent of 64787fa... dispose dans prêt
+
+                //if (isNewGame)
+                //{
+                //    f.isNewGame = false;
+                //    this.Dispose();
+                //}
+
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
@@ -905,12 +904,9 @@ namespace batailleNavale
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
-<<<<<<< HEAD
                 f.isNewGame = true;
                 
-=======
                 this.Dispose();
->>>>>>> parent of 64787fa... dispose dans prêt
                 //listPorteAvion = null;
                 //listCroiseur = null;
                 //listContreTorpilleur = null;
