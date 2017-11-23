@@ -387,8 +387,7 @@
             // tmrAutoShoot
             // 
             this.tmrAutoShoot.Enabled = true;
-            this.tmrAutoShoot.Interval = 1000;
-            //this.tmrAutoShoot.Tick += new System.EventHandler(this.tmrAutoShoot_Tick);
+            this.tmrAutoShoot.Interval = 200;
             // 
             // lblTimeToShoot
             // 
