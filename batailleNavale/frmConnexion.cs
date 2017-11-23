@@ -94,7 +94,6 @@ namespace batailleNavale
         public void ReloadMain()
         {
             f.Close();
-            f.Dispose();
         }
     }
 }
