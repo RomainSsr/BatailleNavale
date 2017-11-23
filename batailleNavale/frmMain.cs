@@ -17,7 +17,7 @@ namespace batailleNavale
 {
     public partial class frmMain : Form
     {
-        frmMain f;
+        frmMain f = new frmMain();
 
         SimpleTcpServer server;
         SimpleTcpClient client;
@@ -112,7 +112,6 @@ namespace batailleNavale
         public frmMain()
         {
             InitializeComponent();
-            f = new frmMain();
         }
 
         /// <summary>
@@ -887,11 +886,11 @@ namespace batailleNavale
                     myTurn = true;
                 }
 
-                //if (isNewGame)
-                //{
-                //    f.isNewGame = false;
-                //    this.Dispose();
-                //}
+                if (isNewGame)
+                {
+                    f.isNewGame = false;
+                    this.Dispose();
+                }
 
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
@@ -906,7 +905,6 @@ namespace batailleNavale
                 f.initializeAllGrids();
                 f.isNewGame = true;
                 
-                this.Dispose();
                 //listPorteAvion = null;
                 //listCroiseur = null;
                 //listContreTorpilleur = null;
