@@ -882,6 +882,10 @@ namespace batailleNavale
                 {
                     myTurn = true;
                 }
+                if (wantNewGame)
+                {
+                    this.Dispose();
+                }
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
@@ -893,7 +897,7 @@ namespace batailleNavale
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
-                this.Dispose();
+                
                 //listPorteAvion = null;
                 //listCroiseur = null;
                 //listContreTorpilleur = null;
