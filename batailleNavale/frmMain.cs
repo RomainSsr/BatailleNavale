@@ -17,7 +17,7 @@ namespace batailleNavale
 {
     public partial class frmMain : Form
     {
-        frmMain f = new frmMain();
+        
 
         SimpleTcpServer server;
         SimpleTcpClient client;
@@ -888,7 +888,7 @@ namespace batailleNavale
 
                 if (isNewGame)
                 {
-                    f.isNewGame = false;
+                    isNewGame = false;
                     this.Dispose();
                 }
 
@@ -896,7 +896,7 @@ namespace batailleNavale
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
                 wantNewGame = true;
-                
+                frmMain f = new frmMain();
                 this.Hide();
                 this.Close();
                 f.ShowDialog();
