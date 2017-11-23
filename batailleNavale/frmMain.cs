@@ -17,6 +17,8 @@ namespace batailleNavale
 {
     public partial class frmMain : Form
     {
+        frmMain f;
+
         SimpleTcpServer server;
         SimpleTcpClient client;
 
@@ -36,6 +38,7 @@ namespace batailleNavale
         bool closingMessageShown = false;
         bool tmrAutoShootEnable = false;
         bool wantNewGame = false;
+        bool isNewGame = false;
         int boatTag = 0;
         int cmptBtn = 0;
         int cmptBtnToShoot = 0;
@@ -109,6 +112,7 @@ namespace batailleNavale
         public frmMain()
         {
             InitializeComponent();
+            f = new frmMain();
         }
 
         /// <summary>
@@ -882,21 +886,23 @@ namespace batailleNavale
                 {
                     myTurn = true;
                 }
-                if (wantNewGame)
+                if (isNewGame)
                 {
+                    f.isNewGame = false;
                     this.Dispose();
                 }
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
                 wantNewGame = true;
-                frmMain f = new frmMain();
+                
                 this.Hide();
                 this.Close();
                 f.ShowDialog();
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
+                f.isNewGame = true;
                 
                 //listPorteAvion = null;
                 //listCroiseur = null;
