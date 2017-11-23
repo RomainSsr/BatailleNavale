@@ -893,7 +893,7 @@ namespace batailleNavale
                 if (isNewGame)
                 {
                     isNewGame = false;
-                    this.Dispose();
+                    fConn.DisposeFrmMain();
                 }
 
             }
@@ -901,7 +901,7 @@ namespace batailleNavale
             {
 
                 fConn.ReloadMain();
-                
+                isNewGame = true;
 
                 /*wantNewGame = true;
                 frmMain f = new frmMain();
