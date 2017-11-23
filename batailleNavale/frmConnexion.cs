@@ -15,7 +15,7 @@ namespace batailleNavale
 {
     public partial class frmConnexion : Form
     {
-        frmMain f = new frmMain();
+        frmMain f; 
         static private SimpleTcpServer _server;
         static private SimpleTcpClient _client;
         static private TextBox _tbxClientIp;
@@ -26,7 +26,7 @@ namespace batailleNavale
                 return _tbxClientIp;
             }
         }
-        static public  SimpleTcpServer SERVER
+        static public SimpleTcpServer SERVER
         {
             get
             {
@@ -45,6 +45,7 @@ namespace batailleNavale
         public frmConnexion()
         {
             InitializeComponent();
+            f = new frmMain(this);
         }
 
         private void Connexion_Load(object sender, EventArgs e)
@@ -55,11 +56,11 @@ namespace batailleNavale
 
             _client = new SimpleTcpClient();
             _client.StringEncoder = Encoding.UTF8;
-            
+
             tbxLocalIp.Text = GetLocalIPAddress();
         }
 
-       
+
 
         public static string GetLocalIPAddress()
         {
@@ -87,16 +88,12 @@ namespace batailleNavale
             _tbxClientIp = tbxClientIp;
             AutoClosingMessageBox.Show("Connecté", "État de la connexion", 1000);
             this.Visible = false;
-            f.ShowDialog();
+            f.Show();
         }
 
         public void ReloadMain()
         {
             f.Close();
-            f.Dispose();
-            f = new frmMain();
-            f.Show();
-           
         }
     }
 }

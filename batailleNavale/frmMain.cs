@@ -110,9 +110,10 @@ namespace batailleNavale
         List<Button> listOfAvailableButton = new List<Button>();
 
 
-        public frmMain()
+        public frmMain(frmConnexion frmConn)
         {
             InitializeComponent();
+            fConn = frmConn;
         }
 
         /// <summary>
@@ -123,7 +124,6 @@ namespace batailleNavale
         private void batailleNavale_Load(object sender, EventArgs e)
 
         {
-            fConn = new frmConnexion();
 
             server = frmConnexion.SERVER;
             client = frmConnexion.CLIENT;
@@ -900,6 +900,7 @@ namespace batailleNavale
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
 
+                fConn.ReloadMain();
                 
 
                 /*wantNewGame = true;
