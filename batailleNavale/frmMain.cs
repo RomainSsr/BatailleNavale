@@ -69,6 +69,26 @@ namespace batailleNavale
             lineBreak = COLUMN_COUNT;
         }
 
+        public void CreateNewLists()
+        {
+            // listes des positions des bateaux -> sera vidée au fur et à mesure des tirs
+            List<string> listPorteAvion = new List<string>();
+            List<string> listCroiseur = new List<string>();
+            List<string> listContreTorpilleur = new List<string>();
+            List<string> listSousMarin = new List<string>();
+            List<string> listTorpilleur = new List<string>();
+
+            // listes des positions des bateaux -> ne sera pas vidée au fur et à mesure des tirs
+            List<string> listpositionPorteAvionToSink = new List<string>();
+            List<string> listpositionCroiseurToSink = new List<string>();
+            List<string> listpositionContreTorpilleurToSink = new List<string>();
+            List<string> listpositionSousMarinToSink = new List<string>();
+            List<string> listpositionTorpilleurToSink = new List<string>();
+
+            List<Button> listOfAvailableButton = new List<Button>();
+        }
+
+
         // listes des positions des bateaux -> sera vidée au fur et à mesure des tirs
         List<string> listPorteAvion = new List<string>();
         List<string> listCroiseur = new List<string>();
@@ -865,7 +885,6 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-
                 wantNewGame = true;
                 frmMain f = new frmMain();
                 this.Hide();
@@ -874,7 +893,8 @@ namespace batailleNavale
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
-
+                f.DefaultVarValues();
+                f.CreateNewLists();
                 //Controls.Clear();
                 //InitializeComponent();
                 //initializeAllGrids();
