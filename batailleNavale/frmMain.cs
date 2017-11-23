@@ -17,6 +17,7 @@ namespace batailleNavale
 {
     public partial class frmMain : Form
     {
+        frmConnexion fConn;
         
 
         SimpleTcpServer server;
@@ -122,11 +123,14 @@ namespace batailleNavale
         private void batailleNavale_Load(object sender, EventArgs e)
 
         {
+            fConn = new frmConnexion();
+
             server = frmConnexion.SERVER;
             client = frmConnexion.CLIENT;
 
             server.DataReceived += Server_DataReceived;
             initializeAllGrids();
+
 
         }
 
@@ -895,7 +899,10 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-                wantNewGame = true;
+
+                
+
+                /*wantNewGame = true;
                 frmMain f = new frmMain();
                 this.Hide();
                 this.Close();
@@ -903,7 +910,7 @@ namespace batailleNavale
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
-                f.isNewGame = true;
+                f.isNewGame = true;*/
                 
                 //listPorteAvion = null;
                 //listCroiseur = null;

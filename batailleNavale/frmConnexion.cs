@@ -89,5 +89,14 @@ namespace batailleNavale
             this.Visible = false;
             f.ShowDialog();
         }
+
+        public void ReloadMain()
+        {
+            f.Close();
+            f.Dispose();
+            f = new frmMain();
+            f.Show();
+           
+        }
     }
 }
