@@ -888,11 +888,12 @@ namespace batailleNavale
                 wantNewGame = true;
                 frmMain f = new frmMain();
                 this.Hide();
-                this.Dispose();
+                this.Close();
                 f.ShowDialog();
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
+                this.Dispose();
                 //listPorteAvion = null;
                 //listCroiseur = null;
                 //listContreTorpilleur = null;
