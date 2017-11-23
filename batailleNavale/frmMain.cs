@@ -889,12 +889,22 @@ namespace batailleNavale
                 frmMain f = new frmMain();
                 this.Hide();
                 this.Close();
+                listPorteAvion = null;
+                listCroiseur = null;
+                listContreTorpilleur = null;
+                listSousMarin = null;
+                listTorpilleur = null;
+                listpositionPorteAvionToSink = null;
+                listpositionCroiseurToSink = null;
+                listpositionContreTorpilleurToSink = null;
+                listpositionSousMarinToSink = null;
+                listpositionTorpilleurToSink = null;
                 f.ShowDialog();
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
-                f.DefaultVarValues();
-                f.CreateNewLists();
+                //f.DefaultVarValues();
+                //f.CreateNewLists();
                 //Controls.Clear();
                 //InitializeComponent();
                 //initializeAllGrids();
@@ -907,16 +917,6 @@ namespace batailleNavale
                 //gameEnded = false;
                 //score = 0;
                 //opponentScore = 0;
-                //listPorteAvion.Clear();
-                //listCroiseur.Clear();
-                //listContreTorpilleur.Clear();
-                //listSousMarin.Clear();
-                //listTorpilleur.Clear();
-                //listpositionPorteAvionToSink.Clear();
-                //listpositionCroiseurToSink.Clear();
-                //listpositionContreTorpilleurToSink.Clear();
-                //listpositionSousMarinToSink.Clear();
-                //listpositionTorpilleurToSink.Clear();
             }
         }
 
