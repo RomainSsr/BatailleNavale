@@ -93,9 +93,10 @@ namespace batailleNavale
 
         public void ReloadMain()
         {
+            f.Hide();
+            frmMain frm = new frmMain(this);
+            frm.Show();
             f.Dispose();
-            f = new frmMain(this);
-            f.Show();
         }
     }
 }
