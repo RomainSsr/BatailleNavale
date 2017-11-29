@@ -100,6 +100,7 @@ namespace batailleNavale
 
         public void DisposeFrmMain()
         {
+
            // f.Dispose();
 
         }
