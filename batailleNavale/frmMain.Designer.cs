@@ -387,7 +387,7 @@
             // tmrAutoShoot
             // 
             this.tmrAutoShoot.Enabled = true;
-            this.tmrAutoShoot.Interval = 200;
+            this.tmrAutoShoot.Interval = 1000;
             // 
             // lblTimeToShoot
             // 
