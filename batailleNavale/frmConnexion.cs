@@ -96,6 +96,7 @@ namespace batailleNavale
             f.Hide();
             frmMain frm = new frmMain(this);
             frm.Show();
+            f.Close();
         }
 
         public void DisposeFrmMain()
