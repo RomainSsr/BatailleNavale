@@ -1038,8 +1038,8 @@ namespace batailleNavale
             {
                 if (myTurn)
                 {
-                    if (cmptBtnToShoot >= 1// && cmptTimeToShoot == 0
-                        )
+                    if (cmptBtnToShoot >= 1)// && cmptTimeToShoot == 0
+
                     {
                         foreach (Button button in listOfAvailableButton)
                         {

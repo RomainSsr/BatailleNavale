@@ -142,7 +142,7 @@
             this.tbxClientIp.Name = "tbxClientIp";
             this.tbxClientIp.Size = new System.Drawing.Size(100, 20);
             this.tbxClientIp.TabIndex = 33;
-            this.tbxClientIp.Text = "10.134.98.247";
+            this.tbxClientIp.Text = "10.134.99.131";
             // 
             // lblIPClient
             // 
