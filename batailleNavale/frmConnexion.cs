@@ -94,18 +94,16 @@ namespace batailleNavale
 
         public void ReloadMain()
         {
-            f.Hide();
             frm = new frmMain(this);
-            frm.HandleCreated += Frm_HandleCreated;
             frm.Show();
         }
 
-        private void Frm_HandleCreated(object sender, EventArgs e)
+        public void DisposeMain()
         {
-            if (frm.IsHandleCreated)
-            {
-                f.Dispose();
-            }
+            
+
+            f.Hide();
+            f.Dispose();
         }
 
     }
