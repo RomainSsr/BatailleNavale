@@ -94,6 +94,7 @@ namespace batailleNavale
 
         public void ReloadMain()
         {
+            
             f.FormClosed += F_FormClosed;
             frm = new frmMain(this);
             frm.Show();
@@ -103,10 +104,6 @@ namespace batailleNavale
         {
             f.Hide();
             f.Dispose();
-        }
-
-        public void DisposeMain()
-        {
         }
 
     }
