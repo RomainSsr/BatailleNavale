@@ -19,7 +19,7 @@ namespace batailleNavale
     {
         frmConnexion fConn;
         
-
+        
         SimpleTcpServer server;
         SimpleTcpClient client;
 
