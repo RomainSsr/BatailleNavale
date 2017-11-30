@@ -12,14 +12,18 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using SimpleTCP;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace batailleNavale
 {
+    [Serializable]
     public partial class frmMain : Form
     {
         frmConnexion fConn;
+
         
-        
+
         SimpleTcpServer server;
         SimpleTcpClient client;
 
@@ -898,10 +902,13 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-             
-                isNewGame = true;
-                fConn.ReloadMain();
+                XmlSerializer serializer = new XmlSerializer(typeof(frmConnexion));
+                StreamReader lecteur = new StreamReader("sauvegarde.xml");
 
+                fConn = (frmConnexion)serializer.Deserialize(lecteur);
+                isNewGame = true;
+                 
+                
                 /*wantNewGame = true;
                 frmMain f = new frmMain();
                 this.Hide();
@@ -999,11 +1006,8 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void btnQuit_Click(object sender, EventArgs e)
         {
-
             this.Close();
         }
-
-
 
         /// <summary>
         /// Avertit l'utilisateur que le formulaire va être fermé et lui laisse la possibilité d'annuler la fermeture. 

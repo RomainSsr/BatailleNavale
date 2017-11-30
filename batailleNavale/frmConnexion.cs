@@ -11,12 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace batailleNavale
 {
+    
     public partial class frmConnexion : Form
     {
         frmMain f;
-        frmMain frm;
+
         static private SimpleTcpServer _server;
         static private SimpleTcpClient _client;
         static private TextBox _tbxClientIp;
@@ -45,6 +47,7 @@ namespace batailleNavale
 
         public frmConnexion()
         {
+            
             InitializeComponent();
             f = new frmMain(this);
         }
@@ -96,8 +99,8 @@ namespace batailleNavale
         {
             f.Hide();
             f.Dispose();
-            frm = new frmMain(this);
-            frm.Show();
+            f = new frmMain(this);
+            f.Show();
         }
         
     }
