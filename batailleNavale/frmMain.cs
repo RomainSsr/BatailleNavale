@@ -900,7 +900,7 @@ namespace batailleNavale
             {
              
                 isNewGame = true;
-                fConn.DisposeMain();
+                fConn.ReloadMain();
 
                 /*wantNewGame = true;
                 frmMain f = new frmMain();
@@ -1073,11 +1073,6 @@ namespace batailleNavale
                 }
                 cmptBtnToShoot++;
             }
-        }
-
-        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            fConn.ReloadMain();
         }
     }
 }
