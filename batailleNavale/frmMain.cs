@@ -893,8 +893,6 @@ namespace batailleNavale
                 if (isNewGame)
                 {
                     isNewGame = false;
-                    fConn.DisposeFrmMain(); 
-
                 }
 
             }

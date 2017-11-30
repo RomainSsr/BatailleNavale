@@ -15,7 +15,8 @@ namespace batailleNavale
 {
     public partial class frmConnexion : Form
     {
-        frmMain f; 
+        frmMain f;
+        frmMain frm;
         static private SimpleTcpServer _server;
         static private SimpleTcpClient _client;
         static private TextBox _tbxClientIp;
@@ -94,22 +95,18 @@ namespace batailleNavale
         public void ReloadMain()
         {
             f.Hide();
-            frmMain frm = new frmMain(this);
+            frm = new frmMain(this);
             frm.HandleCreated += Frm_HandleCreated;
             frm.Show();
-           // f.Close();
         }
 
         private void Frm_HandleCreated(object sender, EventArgs e)
         {
-            MessageBox.Show("Le handle de la fenêtre nouvelle partie a été créé.");
+            if (frm.IsHandleCreated)
+            {
+                f.Dispose();
+            }
         }
 
-        public void DisposeFrmMain()
-        {
-
-           // f.Dispose();
-
-        }
     }
 }
