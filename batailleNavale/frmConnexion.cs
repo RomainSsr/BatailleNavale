@@ -94,16 +94,11 @@ namespace batailleNavale
 
         public void ReloadMain()
         {
-            f.FormClosed += F_FormClosed;
             f.Hide();
             f.Dispose();
-        }
-
-        private void F_FormClosed(object sender, FormClosedEventArgs e)
-        {
             frm = new frmMain(this);
             frm.Show();
         }
-
+        
     }
 }
