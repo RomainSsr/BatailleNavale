@@ -900,20 +900,7 @@ namespace batailleNavale
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-                 listPorteAvion = null;
-                 listCroiseur = null;
-                 listContreTorpilleur = null;
-                 listSousMarin = null;
-                 listTorpilleur = null;
-
-                
-                 listpositionPorteAvionToSink = null;
-                 listpositionCroiseurToSink = null;
-                 listpositionContreTorpilleurToSink = null;
-                 listpositionSousMarinToSink = null;
-                 listpositionTorpilleurToSink = null;
-
-                 listOfAvailableButton = null;
+             
                 fConn.ReloadMain();
                 isNewGame = true;
 

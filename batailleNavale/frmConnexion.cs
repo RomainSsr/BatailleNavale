@@ -95,8 +95,14 @@ namespace batailleNavale
         {
             f.Hide();
             frmMain frm = new frmMain(this);
+            frm.HandleCreated += Frm_HandleCreated;
             frm.Show();
-            f.Close();
+           // f.Close();
+        }
+
+        private void Frm_HandleCreated(object sender, EventArgs e)
+        {
+            MessageBox.Show("Le handle de la fenêtre nouvelle partie a été créé.");
         }
 
         public void DisposeFrmMain()
