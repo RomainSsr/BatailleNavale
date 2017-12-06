@@ -1004,6 +1004,7 @@ namespace batailleNavale
                     }
                     closingMessageShown = true;
                 }
+                Application.Exit();
             }
         }
 
