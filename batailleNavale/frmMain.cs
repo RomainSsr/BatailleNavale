@@ -539,10 +539,10 @@ namespace batailleNavale
                 {
                     tlpOpponentGrid.Enabled = false;
                 });
-                btnReadyAndNewGame.Invoke((MethodInvoker)delegate ()
+                /*btnReadyAndNewGame.Invoke((MethodInvoker)delegate ()
                 {
                     btnReadyAndNewGame.Enabled = true;
-                });
+                });*/
                 tmrAutoShootEnable = false;
                 myTurn = true;
                 gameEnded = true;
@@ -573,10 +573,10 @@ namespace batailleNavale
                     tlpOpponentGrid.Enabled = false;
                 });
 
-                btnReadyAndNewGame.Invoke((MethodInvoker)delegate ()
+               /* btnReadyAndNewGame.Invoke((MethodInvoker)delegate ()
                 {
                     btnReadyAndNewGame.Enabled = true;
-                });
+                });*/
                 tmrAutoShootEnable = false;
                 gameEnded = true;
             }
@@ -833,14 +833,14 @@ namespace batailleNavale
             //touche Ctrl
             if (e.KeyState == 33)
             {
-                isVertical = !isVertical;
+                isVertical = false;
             }
 
             //touche alt
-            /*if (e.KeyState == 9)
+            if (e.KeyState == 9)
             {
                 isVertical = true;
-            }*/
+            }
         }
 
         /// <summary>
