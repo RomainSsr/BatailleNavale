@@ -12,17 +12,15 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using SimpleTCP;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace batailleNavale
 {
-    [Serializable]
+
     public partial class frmMain : Form
     {
         frmConnexion fConn;
 
-        
+
 
         SimpleTcpServer server;
         SimpleTcpClient client;
@@ -43,7 +41,7 @@ namespace batailleNavale
         bool closingMessageShown = false;
         bool tmrAutoShootEnable = false;
         bool wantNewGame = false;
-        bool isNewGame = false;
+        // bool isNewGame = false;
         int boatTag = 0;
         int cmptBtn = 0;
         int cmptBtnToShoot = 0;
@@ -56,7 +54,11 @@ namespace batailleNavale
 
         public void DefaultVarValues()
         {
-            tempTag = "";
+
+            //************************/!\ NON UTILISÉ CAR NOUVELLE PARTIE NON-FONCTIONNEL /!\*********************************
+
+
+            /*tempTag = "";
             receivedTag = "";
             notification = "";
             listElements = "";
@@ -74,28 +76,8 @@ namespace batailleNavale
             cmptTimeToShoot = 60;
             boatText = "";
             isVertical = false;
-            lineBreak = COLUMN_COUNT;
+            lineBreak = COLUMN_COUNT;*/
         }
-
-        public void CreateNewLists()
-        {
-            // listes des positions des bateaux -> sera vidée au fur et à mesure des tirs
-            List<string> listPorteAvion = new List<string>();
-            List<string> listCroiseur = new List<string>();
-            List<string> listContreTorpilleur = new List<string>();
-            List<string> listSousMarin = new List<string>();
-            List<string> listTorpilleur = new List<string>();
-
-            // listes des positions des bateaux -> ne sera pas vidée au fur et à mesure des tirs
-            List<string> listpositionPorteAvionToSink = new List<string>();
-            List<string> listpositionCroiseurToSink = new List<string>();
-            List<string> listpositionContreTorpilleurToSink = new List<string>();
-            List<string> listpositionSousMarinToSink = new List<string>();
-            List<string> listpositionTorpilleurToSink = new List<string>();
-
-            List<Button> listOfAvailableButton = new List<Button>();
-        }
-
 
         // listes des positions des bateaux -> sera vidée au fur et à mesure des tirs
         List<string> listPorteAvion = new List<string>();
@@ -128,13 +110,11 @@ namespace batailleNavale
         private void batailleNavale_Load(object sender, EventArgs e)
 
         {
-
             server = frmConnexion.SERVER;
             client = frmConnexion.CLIENT;
 
             server.DataReceived += Server_DataReceived;
             initializeAllGrids();
-
 
         }
 
@@ -391,10 +371,10 @@ namespace batailleNavale
         private void Shoot()
         {
             string tag = receivedTag;
-            tlpOpponentGrid.Invoke(( MethodInvoker)delegate ()
-            {
-                tlpOpponentGrid.Enabled = true;
-            });
+            tlpOpponentGrid.Invoke((MethodInvoker)delegate ()
+           {
+               tlpOpponentGrid.Enabled = true;
+           });
             if (tag != "")
             {
                 if (listPorteAvion.Contains(tag) || listCroiseur.Contains(tag) || listContreTorpilleur.Contains(tag) || listSousMarin.Contains(tag) || listTorpilleur.Contains(tag))
@@ -825,12 +805,10 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
-
-
             Controls.Clear();
             InitializeComponent();
             initializeAllGrids();
-            
+
             btnReadyAndNewGame.Enabled = false;
             listPorteAvion.Clear();
             listCroiseur.Clear();
@@ -855,19 +833,19 @@ namespace batailleNavale
             //touche Ctrl
             if (e.KeyState == 33)
             {
-                isVertical = false;
+                isVertical = !isVertical;
             }
 
             //touche alt
-            if (e.KeyState == 9)
+            /*if (e.KeyState == 9)
             {
                 isVertical = true;
-            }
+            }*/
         }
 
         /// <summary>
         /// Quand le texte du bouton vaut "Prêt", il Confirme que le placement des bateaux est correct et que la partie peut commencer
-        /// Quand le texte du bouton vaut "Nouvelle Partie", il permet de commencer une nouvelle partie.
+        /// Quand le texte du bouton vaut "Nouvelle Partie", il permet de commencer une nouvelle partie.-> NON FONCTIONNEL
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -894,22 +872,19 @@ namespace batailleNavale
                     myTurn = true;
                 }
 
-                if (isNewGame)
+                /*if (isNewGame)
                 {
                     isNewGame = false;
-                }
+                }*/
 
             }
             else if (btnReadyAndNewGame.Text == "Nouvelle Partie")
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(frmConnexion));
-                StreamReader lecteur = new StreamReader("sauvegarde.xml");
+                // *******************************************/!\ NON FONCTIONNEL /!\*******************************************
 
-                fConn = (frmConnexion)serializer.Deserialize(lecteur);
-                isNewGame = true;
-                 
-                
-                /*wantNewGame = true;
+                /*isNewGame = true;
+
+                wantNewGame = true;
                 frmMain f = new frmMain();
                 this.Hide();
                 this.Close();
@@ -917,32 +892,32 @@ namespace batailleNavale
                 f.Controls.Clear();
                 f.InitializeComponent();
                 f.initializeAllGrids();
-                f.isNewGame = true;*/
-                
-                //listPorteAvion = null;
-                //listCroiseur = null;
-                //listContreTorpilleur = null;
-                //listSousMarin = null;
-                //listTorpilleur = null;
-                //listpositionPorteAvionToSink = null;
-                //listpositionCroiseurToSink = null;
-                //listpositionContreTorpilleurToSink = null;
-                //listpositionSousMarinToSink = null;
-                //listpositionTorpilleurToSink = null;
-                //f.DefaultVarValues();
-                //f.CreateNewLists();
-                //Controls.Clear();
-                //InitializeComponent();
-                //initializeAllGrids();
-                //tmrReady.Start();
-                //DefaultVarValues();
-                //btnReadyAndNewGame.Enabled = false;
-                //tmrAutoShootEnable = false;
-                //cmptTimeToShoot = 60;
-                //opponentReady = false;
-                //gameEnded = false;
-                //score = 0;
-                //opponentScore = 0;
+                f.isNewGame = true;
+
+                listPorteAvion = null;
+                listCroiseur = null;
+                listContreTorpilleur = null;
+                listSousMarin = null;
+                listTorpilleur = null;
+                listpositionPorteAvionToSink = null;
+                listpositionCroiseurToSink = null;
+                listpositionContreTorpilleurToSink = null;
+                listpositionSousMarinToSink = null;
+                listpositionTorpilleurToSink = null;
+                f.DefaultVarValues();
+                f.CreateNewLists();
+                Controls.Clear();
+                InitializeComponent();
+                initializeAllGrids();
+                tmrReady.Start();
+                DefaultVarValues();
+                btnReadyAndNewGame.Enabled = false;
+                tmrAutoShootEnable = false;
+                cmptTimeToShoot = 60;
+                opponentReady = false;
+                gameEnded = false;
+                score = 0;
+                opponentScore = 0;*/
             }
         }
 
@@ -971,8 +946,6 @@ namespace batailleNavale
             }
             else
                 lblMessages.Text = "La partie peut commencer !" + Environment.NewLine + "AU TOUR DE L'ADVERSAIRE !";
-
-
         }
 
         /// <summary>
@@ -1034,6 +1007,11 @@ namespace batailleNavale
             }
         }
 
+        /// <summary>
+        /// Joue à la place du joueur après 60 secondes afin que la partie soit stimulante
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tmrAutoShoot_Tick(object sender, EventArgs e)
         {
             lblTimeToShoot.Text = String.Format("Il vous reste {0} seconde(s) pour jouer", cmptTimeToShoot);
