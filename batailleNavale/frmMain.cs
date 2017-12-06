@@ -18,7 +18,7 @@ namespace batailleNavale
 
     public partial class frmMain : Form
     {
-        frmConnexion fConn;
+       // frmConnexion fConn;
 
 
 
@@ -41,7 +41,7 @@ namespace batailleNavale
         bool closingMessageShown = false;
         bool tmrAutoShootEnable = false;
         bool wantNewGame = false;
-        // bool isNewGame = false;
+        bool isNewGame = false;
         int boatTag = 0;
         int cmptBtn = 0;
         int cmptBtnToShoot = 0;
@@ -99,7 +99,7 @@ namespace batailleNavale
         public frmMain(frmConnexion frmConn)
         {
             InitializeComponent();
-            fConn = frmConn;
+            //fConn = frmConn;
         }
 
         /// <summary>
@@ -998,7 +998,7 @@ namespace batailleNavale
                 }
                 else
                 {
-                    if (opponentReady)
+                    if (opponentReady && !gameEnded)
                     {
                         client.WriteLine("not" + "VICTOIRE !");
                     }
