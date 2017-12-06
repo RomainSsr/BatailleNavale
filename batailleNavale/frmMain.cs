@@ -799,7 +799,7 @@ namespace batailleNavale
         }
 
         /// <summary>
-        /// Permet de réinitialiser la forme
+        /// Permet de réinitialiser la form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
