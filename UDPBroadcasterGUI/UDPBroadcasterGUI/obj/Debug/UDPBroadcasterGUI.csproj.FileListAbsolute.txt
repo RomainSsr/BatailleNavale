@@ -1,0 +1,9 @@
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\bin\Debug\UDPBroadcasterGUI.exe.config
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\bin\Debug\UDPBroadcasterGUI.exe
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\bin\Debug\UDPBroadcasterGUI.pdb
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.csprojResolveAssemblyReference.cache
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.Form1.resources
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.Properties.Resources.resources
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.csproj.GenerateResource.Cache
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.exe
+c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.pdb
