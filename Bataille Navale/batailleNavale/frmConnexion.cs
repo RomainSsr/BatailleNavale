@@ -8,13 +8,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 namespace batailleNavale
 {
-    
+
     public partial class frmConnexion : Form
     {
         frmMain f;
@@ -23,7 +24,16 @@ namespace batailleNavale
         static private SimpleTcpClient _client;
         static private TextBox _tbxClientIp;
 
-        bool done = false;
+#region 
+        //variables pour UDP client
+        Thread firstTrhead;
+        private const int listenPort = 11000;
+        UdpClient listener = new UdpClient(listenPort);
+        IPEndPoint groupEP = new IPEndPoint(IPAddress.Any, listenPort);
+        string received_data;
+        byte[] receive_byte_array;
+        #endregion
+
         #region comments
         // Create a socket object. This is the fundamental device used to network
         // communications. When creating this object we specify:
@@ -80,7 +90,7 @@ namespace batailleNavale
 
         public frmConnexion()
         {
-            
+
             InitializeComponent();
             f = new frmMain(this);
         }
@@ -134,30 +144,77 @@ namespace batailleNavale
         {
             string myIp = GetLocalIPAddress();
 
-            if (myIp.Length == 0)
-            {
-                done = true;
-            }
-            else
-            {
-                // the socket object must have an array of bytes to send.
-                // this loads the string entered by the user into an array of bytes.
-                byte[] send_buffer = Encoding.ASCII.GetBytes(myIp);
+            // the socket object must have an array of bytes to send.
+            // this loads the string entered by the user into an array of bytes.
+            byte[] send_buffer = Encoding.ASCII.GetBytes(myIp);
 
-                // Remind the user of where this is going.
-                Console.WriteLine("sending to address: {0} port: {1}",
-                sending_end_point.Address,
-                sending_end_point.Port);
-                try
-                {
-                    sending_socket.SendTo(send_buffer, sending_end_point);
-                }
-                catch (Exception ex)
-                {
-                    lblError.Text = ex.ToString();
-                }
-               
+            // Remind the user of where this is going.
+            Console.WriteLine("sending to address: {0} port: {1}",
+            sending_end_point.Address,
+            sending_end_point.Port);
+            try
+            {
+                sending_socket.SendTo(send_buffer, sending_end_point);
             }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.ToString();
+            }
+
+
         }
+
+        private void btnStartListen_Click(object sender, EventArgs e)
+        {
+            lblClientInfo.Text = "Listener Activé";
+
+            firstTrhead = new Thread(new ThreadStart(NetworkDiscovery));
+            firstTrhead.Start();
+        }
+
+        private void btnStopListen_Click(object sender, EventArgs e)
+        {
+            lblClientInfo.Text = "Listener Désactivé";
+            firstTrhead.Suspend();
+        }
+
+        private void NetworkDiscovery()
+        {
+            while (Thread.CurrentThread.IsAlive)
+            {
+                // this is the line of code that receives the broadcase message.
+                // It calls the receive function from the object listener (class UdpClient)
+                // It passes to listener the end point groupEP.
+                // It puts the data from the broadcast message into the byte array
+                // named received_byte_array.
+                // I don't know why this uses the class UdpClient and IPEndPoint like this.
+                // Contrast this with the talker code. It does not pass by reference.
+                // Note that this is a synchronous or blocking call.
+                receive_byte_array = listener.Receive(ref groupEP);
+
+                received_data = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
+                if (received_data != "")
+                {
+
+                    bool doublon = false;
+                    foreach (var element in lsbAvaiableServers.Items)
+                    {
+                        if (element.ToString() == received_data)
+                        {
+                            doublon = true;
+                        }
+                    }
+                    if (!doublon)
+                    {
+                        lsbAvaiableServers.Invoke((MethodInvoker)delegate ()
+                        {
+                            lsbAvaiableServers.Items.Add(received_data);
+                        });
+                    }
+                }
+            }
+
+        }
+
     }
 }

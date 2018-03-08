@@ -37,13 +37,13 @@
             this.lblServerStatus = new System.Windows.Forms.Label();
             this.lblPortHost = new System.Windows.Forms.Label();
             this.gbClient = new System.Windows.Forms.GroupBox();
-            this.lblPortClient = new System.Windows.Forms.Label();
-            this.tbxClientIp = new System.Windows.Forms.TextBox();
-            this.lblIPClient = new System.Windows.Forms.Label();
-            this.tbxClientPort = new System.Windows.Forms.TextBox();
+            this.lsbAvaiableServers = new System.Windows.Forms.ListBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.tmrBroadcastIp = new System.Windows.Forms.Timer(this.components);
             this.lblError = new System.Windows.Forms.Label();
+            this.btnStartListen = new System.Windows.Forms.Button();
+            this.btnStopListen = new System.Windows.Forms.Button();
+            this.lblClientInfo = new System.Windows.Forms.Label();
             this.gbHost.SuspendLayout();
             this.gbClient.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +95,7 @@
             this.gbHost.Controls.Add(this.btnStart);
             this.gbHost.Location = new System.Drawing.Point(12, 12);
             this.gbHost.Name = "gbHost";
-            this.gbHost.Size = new System.Drawing.Size(200, 151);
+            this.gbHost.Size = new System.Drawing.Size(200, 207);
             this.gbHost.TabIndex = 44;
             this.gbHost.TabStop = false;
             this.gbHost.Text = "Host";
@@ -120,57 +120,31 @@
             // 
             // gbClient
             // 
-            this.gbClient.Controls.Add(this.lblPortClient);
-            this.gbClient.Controls.Add(this.tbxClientIp);
-            this.gbClient.Controls.Add(this.lblIPClient);
-            this.gbClient.Controls.Add(this.tbxClientPort);
+            this.gbClient.Controls.Add(this.lblClientInfo);
+            this.gbClient.Controls.Add(this.btnStopListen);
+            this.gbClient.Controls.Add(this.btnStartListen);
+            this.gbClient.Controls.Add(this.lsbAvaiableServers);
             this.gbClient.Controls.Add(this.btnConnect);
             this.gbClient.Location = new System.Drawing.Point(218, 12);
             this.gbClient.Name = "gbClient";
-            this.gbClient.Size = new System.Drawing.Size(200, 151);
+            this.gbClient.Size = new System.Drawing.Size(200, 207);
             this.gbClient.TabIndex = 45;
             this.gbClient.TabStop = false;
             this.gbClient.Text = "Client";
             // 
-            // lblPortClient
+            // lsbAvaiableServers
             // 
-            this.lblPortClient.AutoSize = true;
-            this.lblPortClient.Location = new System.Drawing.Point(30, 62);
-            this.lblPortClient.Name = "lblPortClient";
-            this.lblPortClient.Size = new System.Drawing.Size(26, 13);
-            this.lblPortClient.TabIndex = 41;
-            this.lblPortClient.Text = "Port";
-            // 
-            // tbxClientIp
-            // 
-            this.tbxClientIp.Location = new System.Drawing.Point(62, 19);
-            this.tbxClientIp.Name = "tbxClientIp";
-            this.tbxClientIp.Size = new System.Drawing.Size(100, 20);
-            this.tbxClientIp.TabIndex = 33;
-            this.tbxClientIp.Text = "10.134.99.131";
-            // 
-            // lblIPClient
-            // 
-            this.lblIPClient.AutoSize = true;
-            this.lblIPClient.Location = new System.Drawing.Point(39, 22);
-            this.lblIPClient.Name = "lblIPClient";
-            this.lblIPClient.Size = new System.Drawing.Size(17, 13);
-            this.lblIPClient.TabIndex = 32;
-            this.lblIPClient.Text = "IP";
-            // 
-            // tbxClientPort
-            // 
-            this.tbxClientPort.Location = new System.Drawing.Point(62, 59);
-            this.tbxClientPort.Name = "tbxClientPort";
-            this.tbxClientPort.Size = new System.Drawing.Size(100, 20);
-            this.tbxClientPort.TabIndex = 36;
-            this.tbxClientPort.Text = "8910";
+            this.lsbAvaiableServers.FormattingEnabled = true;
+            this.lsbAvaiableServers.Location = new System.Drawing.Point(26, 50);
+            this.lsbAvaiableServers.Name = "lsbAvaiableServers";
+            this.lsbAvaiableServers.Size = new System.Drawing.Size(154, 95);
+            this.lsbAvaiableServers.TabIndex = 41;
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(62, 122);
+            this.btnConnect.Location = new System.Drawing.Point(26, 151);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.Size = new System.Drawing.Size(154, 23);
             this.btnConnect.TabIndex = 40;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -184,17 +158,46 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(13, 170);
+            this.lblError.Location = new System.Drawing.Point(12, 232);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(35, 13);
             this.lblError.TabIndex = 46;
             this.lblError.Text = "label1";
             // 
+            // btnStartListen
+            // 
+            this.btnStartListen.Location = new System.Drawing.Point(26, 21);
+            this.btnStartListen.Name = "btnStartListen";
+            this.btnStartListen.Size = new System.Drawing.Size(75, 23);
+            this.btnStartListen.TabIndex = 42;
+            this.btnStartListen.Text = "Listen";
+            this.btnStartListen.UseVisualStyleBackColor = true;
+            this.btnStartListen.Click += new System.EventHandler(this.btnStartListen_Click);
+            // 
+            // btnStopListen
+            // 
+            this.btnStopListen.Location = new System.Drawing.Point(105, 21);
+            this.btnStopListen.Name = "btnStopListen";
+            this.btnStopListen.Size = new System.Drawing.Size(75, 23);
+            this.btnStopListen.TabIndex = 43;
+            this.btnStopListen.Text = "Stop";
+            this.btnStopListen.UseVisualStyleBackColor = true;
+            this.btnStopListen.Click += new System.EventHandler(this.btnStopListen_Click);
+            // 
+            // lblClientInfo
+            // 
+            this.lblClientInfo.AutoSize = true;
+            this.lblClientInfo.Location = new System.Drawing.Point(6, 185);
+            this.lblClientInfo.Name = "lblClientInfo";
+            this.lblClientInfo.Size = new System.Drawing.Size(25, 13);
+            this.lblClientInfo.TabIndex = 47;
+            this.lblClientInfo.Text = "Info";
+            // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 189);
+            this.ClientSize = new System.Drawing.Size(436, 254);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.gbClient);
             this.Controls.Add(this.gbHost);
@@ -218,13 +221,13 @@
         private System.Windows.Forms.GroupBox gbHost;
         private System.Windows.Forms.Label lblPortHost;
         private System.Windows.Forms.GroupBox gbClient;
-        private System.Windows.Forms.Label lblPortClient;
-        private System.Windows.Forms.TextBox tbxClientIp;
-        private System.Windows.Forms.Label lblIPClient;
-        private System.Windows.Forms.TextBox tbxClientPort;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label lblServerStatus;
         private System.Windows.Forms.Timer tmrBroadcastIp;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.ListBox lsbAvaiableServers;
+        private System.Windows.Forms.Button btnStopListen;
+        private System.Windows.Forms.Button btnStartListen;
+        private System.Windows.Forms.Label lblClientInfo;
     }
 }
