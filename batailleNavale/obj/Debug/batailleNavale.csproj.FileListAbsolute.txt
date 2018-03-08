@@ -73,3 +73,4 @@ C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\b
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\batailleNavale.pdb
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\batailleNavale.AboutBox.resources

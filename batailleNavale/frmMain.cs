@@ -18,8 +18,7 @@ namespace batailleNavale
 
     public partial class frmMain : Form
     {
-       // frmConnexion fConn;
-
+        // frmConnexion fConn;
 
 
         SimpleTcpServer server;
@@ -41,7 +40,7 @@ namespace batailleNavale
         bool closingMessageShown = false;
         bool tmrAutoShootEnable = false;
         bool wantNewGame = false;
-        bool isNewGame = false;
+       //bool isNewGame = false;
         int boatTag = 0;
         int cmptBtn = 0;
         int cmptBtnToShoot = 0;
@@ -573,10 +572,10 @@ namespace batailleNavale
                     tlpOpponentGrid.Enabled = false;
                 });
 
-               /* btnReadyAndNewGame.Invoke((MethodInvoker)delegate ()
-                {
-                    btnReadyAndNewGame.Enabled = true;
-                });*/
+                /* btnReadyAndNewGame.Invoke((MethodInvoker)delegate ()
+                 {
+                     btnReadyAndNewGame.Enabled = true;
+                 });*/
                 tmrAutoShootEnable = false;
                 gameEnded = true;
             }
@@ -1003,8 +1002,8 @@ namespace batailleNavale
                         client.WriteLine("not" + "VICTOIRE !");
                     }
                     closingMessageShown = true;
+                    Application.Exit();
                 }
-                Application.Exit();
             }
         }
 
@@ -1056,6 +1055,13 @@ namespace batailleNavale
                 }
                 cmptBtnToShoot++;
             }
+        }
+
+        private void tsmAbout_Click(object sender, EventArgs e)
+        {
+            AboutBox abx = new AboutBox();
+            
+            abx.ShowDialog();
         }
     }
 }

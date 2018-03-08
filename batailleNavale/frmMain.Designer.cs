@@ -55,8 +55,13 @@
             this.tmrReady = new System.Windows.Forms.Timer(this.components);
             this.tmrAutoShoot = new System.Windows.Forms.Timer(this.components);
             this.lblTimeToShoot = new System.Windows.Forms.Label();
+            this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmRules = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlRight.SuspendLayout();
             this.gbChat.SuspendLayout();
+            this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpOpponentGrid
@@ -397,6 +402,38 @@
             this.lblTimeToShoot.Size = new System.Drawing.Size(0, 13);
             this.lblTimeToShoot.TabIndex = 19;
             // 
+            // msMenu
+            // 
+            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmHelp});
+            this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Name = "msMenu";
+            this.msMenu.Size = new System.Drawing.Size(1203, 24);
+            this.msMenu.TabIndex = 20;
+            this.msMenu.Text = "menuStrip1";
+            // 
+            // tsmHelp
+            // 
+            this.tsmHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmRules,
+            this.tsmAbout});
+            this.tsmHelp.Name = "tsmHelp";
+            this.tsmHelp.Size = new System.Drawing.Size(43, 20);
+            this.tsmHelp.Text = "Aide";
+            // 
+            // tsmRules
+            // 
+            this.tsmRules.Name = "tsmRules";
+            this.tsmRules.Size = new System.Drawing.Size(152, 22);
+            this.tsmRules.Text = "Règles";
+            // 
+            // tsmAbout
+            // 
+            this.tsmAbout.Name = "tsmAbout";
+            this.tsmAbout.Size = new System.Drawing.Size(152, 22);
+            this.tsmAbout.Text = "À Propos";
+            this.tsmAbout.Click += new System.EventHandler(this.tsmAbout_Click);
+            // 
             // frmMain
             // 
             this.AcceptButton = this.btnSendMessage;
@@ -417,6 +454,8 @@
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.tlpOpponentGrid);
+            this.Controls.Add(this.msMenu);
+            this.MainMenuStrip = this.msMenu;
             this.Name = "frmMain";
             this.Text = "Bataille Navale";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
@@ -424,6 +463,8 @@
             this.pnlRight.ResumeLayout(false);
             this.gbChat.ResumeLayout(false);
             this.gbChat.PerformLayout();
+            this.msMenu.ResumeLayout(false);
+            this.msMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,6 +498,10 @@
         private System.Windows.Forms.Timer tmrReady;
         private System.Windows.Forms.Timer tmrAutoShoot;
         private System.Windows.Forms.Label lblTimeToShoot;
+        private System.Windows.Forms.MenuStrip msMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmHelp;
+        private System.Windows.Forms.ToolStripMenuItem tsmRules;
+        private System.Windows.Forms.ToolStripMenuItem tsmAbout;
     }
 }
 
