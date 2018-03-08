@@ -74,3 +74,16 @@ C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\b
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.exe.config
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\bin\Debug\batailleNavale.pdb
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\batailleNavale\obj\Debug\batailleNavale.AboutBox.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\bin\Debug\batailleNavale.exe.config
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\bin\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\bin\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\bin\Debug\AutoClosingMessageBox.dll
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\bin\Debug\SimpleTCP.dll
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.AboutBox.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.frmConnexion.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.frmMain.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.exe
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.pdb

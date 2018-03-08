@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnStart = new System.Windows.Forms.Button();
             this.tbxLocalPort = new System.Windows.Forms.TextBox();
             this.tbxLocalIp = new System.Windows.Forms.TextBox();
@@ -41,6 +42,8 @@
             this.lblIPClient = new System.Windows.Forms.Label();
             this.tbxClientPort = new System.Windows.Forms.TextBox();
             this.btnConnect = new System.Windows.Forms.Button();
+            this.tmrBroadcastIp = new System.Windows.Forms.Timer(this.components);
+            this.lblError = new System.Windows.Forms.Label();
             this.gbHost.SuspendLayout();
             this.gbClient.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +62,7 @@
             // 
             this.tbxLocalPort.Location = new System.Drawing.Point(62, 59);
             this.tbxLocalPort.Name = "tbxLocalPort";
+            this.tbxLocalPort.ReadOnly = true;
             this.tbxLocalPort.Size = new System.Drawing.Size(100, 20);
             this.tbxLocalPort.TabIndex = 36;
             this.tbxLocalPort.Text = "8911";
@@ -67,6 +71,7 @@
             // 
             this.tbxLocalIp.Location = new System.Drawing.Point(62, 19);
             this.tbxLocalIp.Name = "tbxLocalIp";
+            this.tbxLocalIp.ReadOnly = true;
             this.tbxLocalIp.Size = new System.Drawing.Size(100, 20);
             this.tbxLocalIp.TabIndex = 33;
             this.tbxLocalIp.Text = "10.134.97.131";
@@ -98,7 +103,7 @@
             // lblServerStatus
             // 
             this.lblServerStatus.AutoSize = true;
-            this.lblServerStatus.Location = new System.Drawing.Point(62, 96);
+            this.lblServerStatus.Location = new System.Drawing.Point(48, 96);
             this.lblServerStatus.Name = "lblServerStatus";
             this.lblServerStatus.Size = new System.Drawing.Size(104, 13);
             this.lblServerStatus.TabIndex = 42;
@@ -171,11 +176,26 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
+            // tmrBroadcastIp
+            // 
+            this.tmrBroadcastIp.Interval = 500;
+            this.tmrBroadcastIp.Tick += new System.EventHandler(this.tmrBroadcastIp_Tick);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(13, 170);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(35, 13);
+            this.lblError.TabIndex = 46;
+            this.lblError.Text = "label1";
+            // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 189);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.gbClient);
             this.Controls.Add(this.gbHost);
             this.Name = "frmConnexion";
@@ -186,6 +206,7 @@
             this.gbClient.ResumeLayout(false);
             this.gbClient.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -203,5 +224,7 @@
         private System.Windows.Forms.TextBox tbxClientPort;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label lblServerStatus;
+        private System.Windows.Forms.Timer tmrBroadcastIp;
+        private System.Windows.Forms.Label lblError;
     }
 }
