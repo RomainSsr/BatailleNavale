@@ -1,0 +1,9 @@
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\bin\Debug\UDPListenerUI.exe.config
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\bin\Debug\UDPListenerUI.exe
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\bin\Debug\UDPListenerUI.pdb
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\obj\Debug\UDPListenerUI.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\obj\Debug\UDPListenerUI.frmMain.resources
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\obj\Debug\UDPListenerUI.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\obj\Debug\UDPListenerUI.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\obj\Debug\UDPListenerUI.exe
+C:\Users\SAUSERR_INFO\Documents\Visual Studio 2017\Projects\UDPListenerUI\UDPListenerUI\obj\Debug\UDPListenerUI.pdb
