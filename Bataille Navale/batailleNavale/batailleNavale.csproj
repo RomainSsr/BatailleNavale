@@ -57,6 +57,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Broadcast.cs" />
     <Compile Include="frmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
