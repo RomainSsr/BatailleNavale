@@ -55,7 +55,7 @@ namespace batailleNavale
         // passed in, determine that this is IPv4 and set the field. If so, the notes
         // in the help file should say so.
         #endregion
-        static IPAddress send_to_address = GetSubnetMask(GetLocalIPAddress());
+        static IPAddress send_to_address = Broadcast.GetBroadcastAddress(GetLocalIPAddress(), GetSubnetMask(GetLocalIPAddress()));
 
         #region comments
         // IPEndPoint appears (to me) to be a class defining the first or final data
@@ -106,6 +106,7 @@ namespace batailleNavale
             _client.StringEncoder = Encoding.UTF8;
 
             tbxLocalIp.Text = GetLocalIPAddress().ToString();
+            tbxLocalPort.Text = listenPort.ToString();
         }
 
 
@@ -148,6 +149,12 @@ namespace batailleNavale
             lblServerStatus.Text = "Serveur Started";
             System.Net.IPAddress ip = System.Net.IPAddress.Parse(tbxLocalIp.Text);
             _server.Start(ip, Convert.ToInt32(tbxLocalPort.Text));
+            _server.ClientConnected += _server_ClientConnected;
+        }
+
+        private void _server_ClientConnected(object sender, TcpClient e)
+        {
+            MessageBox.Show("Client connecté");
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -161,25 +168,28 @@ namespace batailleNavale
 
         private void tmrBroadcastIp_Tick(object sender, EventArgs e)
         {
-            string myIp = GetLocalIPAddress().ToString();
-
-            // the socket object must have an array of bytes to send.
-            // this loads the string entered by the user into an array of bytes.
-            byte[] send_buffer = Encoding.ASCII.GetBytes(myIp);
-
-            // Remind the user of where this is going.
-            Console.WriteLine("sending to address: {0} port: {1}",
-            sending_end_point.Address,
-            sending_end_point.Port);
-            try
+            IPAddress myIP = GetLocalIPAddress();
+            string myIPString = myIP.ToString();
+            if (myIPString != "")
             {
-                sending_socket.SendTo(send_buffer, sending_end_point);
-            }
-            catch (Exception ex)
-            {
-                lblError.Text = ex.ToString();
-            }
 
+                // the socket object must have an array of bytes to send.
+                // this loads the string entered by the user into an array of bytes.
+                byte[] send_buffer = Encoding.ASCII.GetBytes(myIPString);
+
+                // Remind the user of where this is going.
+                Console.WriteLine("sending to address: {0} port: {1}",
+                sending_end_point.Address,
+                sending_end_point.Port);
+                try
+                {
+                    sending_socket.SendTo(send_buffer, sending_end_point);
+                }
+                catch (Exception ex)
+                {
+                    lblError.Text = ex.ToString();
+                }
+            }
 
         }
 
