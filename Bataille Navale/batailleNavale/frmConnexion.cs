@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -27,7 +28,7 @@ namespace batailleNavale
 #region 
         //variables pour UDP client
         Thread firstTrhead;
-        private const int listenPort = 11000;
+        private const int listenPort = 1001;
         UdpClient listener = new UdpClient(listenPort);
         IPEndPoint groupEP = new IPEndPoint(IPAddress.Any, listenPort);
         string received_data;
@@ -54,7 +55,7 @@ namespace batailleNavale
         // passed in, determine that this is IPv4 and set the field. If so, the notes
         // in the help file should say so.
         #endregion
-        static IPAddress send_to_address = IPAddress.Parse("10.134.99.255");
+        static IPAddress send_to_address = GetSubnetMask(GetLocalIPAddress());
 
         #region comments
         // IPEndPoint appears (to me) to be a class defining the first or final data
@@ -64,7 +65,7 @@ namespace batailleNavale
         // port number. As this will be a broadcase message, I don't know what role the
         // port number plays in this.
         #endregion
-        IPEndPoint sending_end_point = new IPEndPoint(send_to_address, 11000);
+        IPEndPoint sending_end_point = new IPEndPoint(send_to_address, 1001);
         static public TextBox TBX_IP_CLIENT
         {
             get
@@ -104,22 +105,40 @@ namespace batailleNavale
             _client = new SimpleTcpClient();
             _client.StringEncoder = Encoding.UTF8;
 
-            tbxLocalIp.Text = GetLocalIPAddress();
+            tbxLocalIp.Text = GetLocalIPAddress().ToString();
         }
 
 
 
-        public static string GetLocalIPAddress()
+        public static IPAddress GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
             {
                 if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
-                    return ip.ToString();
+                    return ip;
                 }
             }
             throw new Exception("Local IP Address Not Found!");
+        }
+
+        public static IPAddress GetSubnetMask(IPAddress address)
+        {
+            foreach (NetworkInterface adapter in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                foreach (UnicastIPAddressInformation unicastIPAddressInformation in adapter.GetIPProperties().UnicastAddresses)
+                {
+                    if (unicastIPAddressInformation.Address.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        if (address.Equals(unicastIPAddressInformation.Address))
+                        {
+                            return unicastIPAddressInformation.IPv4Mask;
+                        }
+                    }
+                }
+            }
+            throw new ArgumentException(string.Format("Can't find subnetmask for IP address '{0}'", address));
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -142,7 +161,7 @@ namespace batailleNavale
 
         private void tmrBroadcastIp_Tick(object sender, EventArgs e)
         {
-            string myIp = GetLocalIPAddress();
+            string myIp = GetLocalIPAddress().ToString();
 
             // the socket object must have an array of bytes to send.
             // this loads the string entered by the user into an array of bytes.
