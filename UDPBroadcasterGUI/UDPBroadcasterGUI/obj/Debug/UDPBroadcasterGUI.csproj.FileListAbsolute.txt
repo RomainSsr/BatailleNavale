@@ -7,3 +7,12 @@ c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UD
 c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.csproj.GenerateResource.Cache
 c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.exe
 c:\users\sauserr_info\documents\visual studio 2017\Projects\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.Form1.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.exe
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\obj\Debug\UDPBroadcasterGUI.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\bin\Debug\UDPBroadcasterGUI.exe.config
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\bin\Debug\UDPBroadcasterGUI.exe
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\UDPBroadcasterGUI\UDPBroadcasterGUI\bin\Debug\UDPBroadcasterGUI.pdb
