@@ -113,9 +113,12 @@ namespace batailleNavale
             client = frmConnexion.CLIENT;
 
             server.DataReceived += Server_DataReceived;
+            client.DataReceived += Client_DataReceived;
             initializeAllGrids();
 
         }
+
+      
 
         /// <summary>
         /// Retourne l'adresse ip de la machine
@@ -141,16 +144,25 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void Server_DataReceived(object sender, SimpleTCP.Message e)
         {
+            DataReceived(e);
+        }
 
+        private void Client_DataReceived(object sender, SimpleTCP.Message e)
+        {
+            DataReceived(e);
+        }
+
+        private void DataReceived(SimpleTCP.Message e)
+        {
             string dataType = e.MessageString.Substring(0, 3);
             string dataWOType = e.MessageString.Substring(3, e.MessageString.Length - 4);
 
             if (dataType == "msg")
             {
                 frmConnexion.TBX_IP_CLIENT.Invoke((MethodInvoker)delegate ()
-               {
-                   lsbMessages.Items.Add(String.Format("Adversaire :{0}", Environment.NewLine + dataWOType + Environment.NewLine));
-               });
+                {
+                    lsbMessages.Items.Add(String.Format("Adversaire :{0}", Environment.NewLine + dataWOType + Environment.NewLine));
+                });
             }
             else
             {
@@ -191,9 +203,7 @@ namespace batailleNavale
                 }
                 Shoot();
             }
-
         }
-
         /// <summary>
         /// Envoie le message avec l'entête msg
         /// </summary>
