@@ -159,9 +159,9 @@ namespace batailleNavale
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            /*_client.Connect(tbxClientIp.Text, Convert.ToInt32(tbxClientPort.Text));
-            _tbxClientIp = tbxClientIp;
-            AutoClosingMessageBox.Show("Connecté", "État de la connexion", 1000);*/
+            _client.Connect(lsbAvaiableServers.SelectedItem.ToString(), Convert.ToInt32(listenPort));
+           // _tbxClientIp = tbxClientIp;
+            AutoClosingMessageBox.Show("Connecté", "État de la connexion", 1000);
             this.Visible = false;
             f.Show();
         }
@@ -245,5 +245,9 @@ namespace batailleNavale
 
         }
 
+        private void lsbAvaiableServers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnConnect.Enabled = true;
+        }
     }
 }

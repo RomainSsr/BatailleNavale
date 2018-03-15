@@ -10,3 +10,14 @@ C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\testSim
 C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.csproj.CoreCompileInputs.cache
 C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.exe
 C:\Users\SAUSERR_INFO\Desktop\Projets c#\Comminot\Bataille Navale C#\dev\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\bin\Debug\testSimpleTCP1Cannal.exe.config
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\bin\Debug\testSimpleTCP1Cannal.exe
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\bin\Debug\testSimpleTCP1Cannal.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\bin\Debug\SimpleTCP.dll
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.csprojResolveAssemblyReference.cache
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.Chat.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.frmConnexion.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.Properties.Resources.resources
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.csproj.GenerateResource.Cache
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.exe
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\testSimpleTCP1Cannal\testSimpleTCP1Cannal\obj\Debug\testSimpleTCP1Cannal.pdb

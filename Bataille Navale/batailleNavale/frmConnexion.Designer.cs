@@ -37,13 +37,13 @@
             this.lblServerStatus = new System.Windows.Forms.Label();
             this.lblPortHost = new System.Windows.Forms.Label();
             this.gbClient = new System.Windows.Forms.GroupBox();
+            this.lblClientInfo = new System.Windows.Forms.Label();
+            this.btnStopListen = new System.Windows.Forms.Button();
+            this.btnStartListen = new System.Windows.Forms.Button();
             this.lsbAvaiableServers = new System.Windows.Forms.ListBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.tmrBroadcastIp = new System.Windows.Forms.Timer(this.components);
             this.lblError = new System.Windows.Forms.Label();
-            this.btnStartListen = new System.Windows.Forms.Button();
-            this.btnStopListen = new System.Windows.Forms.Button();
-            this.lblClientInfo = new System.Windows.Forms.Label();
             this.gbHost.SuspendLayout();
             this.gbClient.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +132,35 @@
             this.gbClient.TabStop = false;
             this.gbClient.Text = "Client";
             // 
+            // lblClientInfo
+            // 
+            this.lblClientInfo.AutoSize = true;
+            this.lblClientInfo.Location = new System.Drawing.Point(6, 185);
+            this.lblClientInfo.Name = "lblClientInfo";
+            this.lblClientInfo.Size = new System.Drawing.Size(25, 13);
+            this.lblClientInfo.TabIndex = 47;
+            this.lblClientInfo.Text = "Info";
+            // 
+            // btnStopListen
+            // 
+            this.btnStopListen.Location = new System.Drawing.Point(105, 21);
+            this.btnStopListen.Name = "btnStopListen";
+            this.btnStopListen.Size = new System.Drawing.Size(75, 23);
+            this.btnStopListen.TabIndex = 43;
+            this.btnStopListen.Text = "Stop";
+            this.btnStopListen.UseVisualStyleBackColor = true;
+            this.btnStopListen.Click += new System.EventHandler(this.btnStopListen_Click);
+            // 
+            // btnStartListen
+            // 
+            this.btnStartListen.Location = new System.Drawing.Point(26, 21);
+            this.btnStartListen.Name = "btnStartListen";
+            this.btnStartListen.Size = new System.Drawing.Size(75, 23);
+            this.btnStartListen.TabIndex = 42;
+            this.btnStartListen.Text = "Listen";
+            this.btnStartListen.UseVisualStyleBackColor = true;
+            this.btnStartListen.Click += new System.EventHandler(this.btnStartListen_Click);
+            // 
             // lsbAvaiableServers
             // 
             this.lsbAvaiableServers.FormattingEnabled = true;
@@ -139,9 +168,11 @@
             this.lsbAvaiableServers.Name = "lsbAvaiableServers";
             this.lsbAvaiableServers.Size = new System.Drawing.Size(154, 95);
             this.lsbAvaiableServers.TabIndex = 41;
+            this.lsbAvaiableServers.SelectedIndexChanged += new System.EventHandler(this.lsbAvaiableServers_SelectedIndexChanged);
             // 
             // btnConnect
             // 
+            this.btnConnect.Enabled = false;
             this.btnConnect.Location = new System.Drawing.Point(26, 151);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(154, 23);
@@ -163,35 +194,6 @@
             this.lblError.Size = new System.Drawing.Size(35, 13);
             this.lblError.TabIndex = 46;
             this.lblError.Text = "label1";
-            // 
-            // btnStartListen
-            // 
-            this.btnStartListen.Location = new System.Drawing.Point(26, 21);
-            this.btnStartListen.Name = "btnStartListen";
-            this.btnStartListen.Size = new System.Drawing.Size(75, 23);
-            this.btnStartListen.TabIndex = 42;
-            this.btnStartListen.Text = "Listen";
-            this.btnStartListen.UseVisualStyleBackColor = true;
-            this.btnStartListen.Click += new System.EventHandler(this.btnStartListen_Click);
-            // 
-            // btnStopListen
-            // 
-            this.btnStopListen.Location = new System.Drawing.Point(105, 21);
-            this.btnStopListen.Name = "btnStopListen";
-            this.btnStopListen.Size = new System.Drawing.Size(75, 23);
-            this.btnStopListen.TabIndex = 43;
-            this.btnStopListen.Text = "Stop";
-            this.btnStopListen.UseVisualStyleBackColor = true;
-            this.btnStopListen.Click += new System.EventHandler(this.btnStopListen_Click);
-            // 
-            // lblClientInfo
-            // 
-            this.lblClientInfo.AutoSize = true;
-            this.lblClientInfo.Location = new System.Drawing.Point(6, 185);
-            this.lblClientInfo.Name = "lblClientInfo";
-            this.lblClientInfo.Size = new System.Drawing.Size(25, 13);
-            this.lblClientInfo.TabIndex = 47;
-            this.lblClientInfo.Text = "Info";
             // 
             // frmConnexion
             // 
