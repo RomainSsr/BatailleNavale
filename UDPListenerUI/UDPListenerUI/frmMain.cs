@@ -24,7 +24,7 @@ namespace UDPListenerUI
 
         }
 
-        private const int listenPort = 11000;
+        private const int listenPort = 1001;
         UdpClient listener = new UdpClient(listenPort);
         IPEndPoint groupEP = new IPEndPoint(IPAddress.Any, listenPort);
         string received_data;
