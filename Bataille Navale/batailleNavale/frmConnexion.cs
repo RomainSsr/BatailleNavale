@@ -25,7 +25,7 @@ namespace batailleNavale
         static private SimpleTcpClient _client;
         static private TextBox _tbxClientIp;
 
-#region 
+        #region 
         //variables pour UDP client
         Thread firstTrhead;
         private const int listenPort = 1001;
@@ -154,13 +154,17 @@ namespace batailleNavale
 
         private void _server_ClientConnected(object sender, TcpClient e)
         {
-            MessageBox.Show("Client connecté");
+            this.Invoke((MethodInvoker)delegate ()
+            {
+                this.Visible = false;
+                f.Show();
+            });
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
             _client.Connect(lsbAvaiableServers.SelectedItem.ToString(), Convert.ToInt32(listenPort));
-           // _tbxClientIp = tbxClientIp;
+            // _tbxClientIp = tbxClientIp;
             AutoClosingMessageBox.Show("Connecté", "État de la connexion", 1000);
             this.Visible = false;
             f.Show();

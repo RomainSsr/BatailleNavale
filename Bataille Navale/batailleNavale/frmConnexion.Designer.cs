@@ -65,7 +65,6 @@
             this.tbxLocalPort.ReadOnly = true;
             this.tbxLocalPort.Size = new System.Drawing.Size(100, 20);
             this.tbxLocalPort.TabIndex = 36;
-            this.tbxLocalPort.Text = "8911";
             // 
             // tbxLocalIp
             // 
