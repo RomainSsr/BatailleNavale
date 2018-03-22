@@ -180,6 +180,7 @@ namespace batailleNavale
 
         private void _server_ClientConnected(object sender, TcpClient e)
         {
+            btnStopServer.PerformClick();
             this.Invoke((MethodInvoker)delegate ()
             {
                 this.Visible = false;
@@ -189,10 +190,11 @@ namespace batailleNavale
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            btnStopListen.PerformClick();
             f = new frmMain(this, false);
             _client.Connect(lsbAvaiableServers.SelectedItem.ToString(), Convert.ToInt32(listenPort));
             // _tbxClientIp = tbxClientIp;
-            AutoClosingMessageBox.Show("Connecté", "État de la connexion", 1000);
+           // AutoClosingMessageBox.Show("Connecté", "État de la connexion", 1000);
             this.Visible = false;
             f.Show();
         }
