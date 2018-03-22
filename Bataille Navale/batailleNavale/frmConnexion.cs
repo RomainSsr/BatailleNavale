@@ -93,7 +93,6 @@ namespace batailleNavale
         {
 
             InitializeComponent();
-            f = new frmMain(this);
         }
 
         private void Connexion_Load(object sender, EventArgs e)
@@ -144,6 +143,7 @@ namespace batailleNavale
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            f = new frmMain(this, true);
             gbClient.Enabled = false;
             tmrBroadcastIp.Start();
             lblServerStatus.Text = "Serveur Started";
@@ -163,6 +163,7 @@ namespace batailleNavale
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            f = new frmMain(this, false);
             _client.Connect(lsbAvaiableServers.SelectedItem.ToString(), Convert.ToInt32(listenPort));
             // _tbxClientIp = tbxClientIp;
             AutoClosingMessageBox.Show("Connecté", "État de la connexion", 1000);

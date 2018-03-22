@@ -34,13 +34,14 @@ namespace batailleNavale
         int opponentScore = 0;
 
         int score = 0;
+        bool isServer = false;
         bool myTurn = false;
         bool opponentReady = false;
         bool gameEnded = false;
         bool closingMessageShown = false;
         bool tmrAutoShootEnable = false;
         bool wantNewGame = false;
-       //bool isNewGame = false;
+        //bool isNewGame = false;
         int boatTag = 0;
         int cmptBtn = 0;
         int cmptBtnToShoot = 0;
@@ -95,9 +96,10 @@ namespace batailleNavale
         List<Button> listOfAvailableButton = new List<Button>();
 
 
-        public frmMain(frmConnexion frmConn)
+        public frmMain(frmConnexion frmConn, bool server)
         {
             InitializeComponent();
+            isServer = server;
             //fConn = frmConn;
         }
 
@@ -109,16 +111,22 @@ namespace batailleNavale
         private void batailleNavale_Load(object sender, EventArgs e)
 
         {
-            server = frmConnexion.SERVER;
-            client = frmConnexion.CLIENT;
+            if (isServer)
+            {
+                server = frmConnexion.SERVER;
+                server.DataReceived += Server_DataReceived;
+            }
+            else
+            {
+                client = frmConnexion.CLIENT;
+                client.DataReceived += Client_DataReceived;
+            }
 
-            server.DataReceived += Server_DataReceived;
-            client.DataReceived += Client_DataReceived;
             initializeAllGrids();
 
         }
 
-      
+
 
         /// <summary>
         /// Retourne l'adresse ip de la machine
@@ -211,7 +219,14 @@ namespace batailleNavale
         /// <param name="e"></param>
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
-            client.WriteLine("msg" + tbxMessage.Text);
+            if (isServer)
+            {
+                server.BroadcastLine("msg" + tbxMessage.Text);
+            }
+            else
+            {
+                client.WriteLine("msg" + tbxMessage.Text);
+            }
             lsbMessages.Items.Add(String.Format("Moi :{0}", Environment.NewLine + tbxMessage.Text + Environment.NewLine));
             tbxMessage.Clear();
         }
@@ -363,13 +378,27 @@ namespace batailleNavale
             if (myTurn)
             {
                 Button btn = sender as Button;
-                client.WriteLine("sht" + btn.Tag.ToString());
+                if (isServer)
+                {
+                    server.BroadcastLine("sht" + btn.Tag.ToString());
+                }
+                else
+                {
+                    client.WriteLine("sht" + btn.Tag.ToString());
+                }
                 tempTag = btn.Tag.ToString();
             }
             if (myTurn)
             {
                 myTurn = false;
-                client.WriteLine("trn" + "true");
+                if (isServer)
+                {
+                    server.BroadcastLine("trn" + "true");
+                }
+                else
+                {
+                    client.WriteLine("trn" + "true");
+                }
                 lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
             }
         }
@@ -388,8 +417,14 @@ namespace batailleNavale
             {
                 if (listPorteAvion.Contains(tag) || listCroiseur.Contains(tag) || listContreTorpilleur.Contains(tag) || listSousMarin.Contains(tag) || listTorpilleur.Contains(tag))
                 {
-
-                    client.WriteLine("not" + "TOUCHÉ !");
+                    if (isServer)
+                    {
+                        server.BroadcastLine("not" + "TOUCHÉ !");
+                    }
+                    else
+                    {
+                        client.WriteLine("not" + "TOUCHÉ !");
+                    }
                     opponentScore++;
 
                     foreach (Button button in tlpPersonalGrid.Controls.OfType<Button>())
@@ -425,7 +460,14 @@ namespace batailleNavale
                 }
                 else
                 {
-                    client.WriteLine("not" + "DANS L'EAU !");
+                    if (isServer)
+                    {
+                        server.BroadcastLine("not" + "DANS L'EAU !");
+                    }
+                    else
+                    {
+                        client.WriteLine("not" + "DANS L'EAU !");
+                    }
 
 
                     foreach (Button button in tlpPersonalGrid.Controls.OfType<Button>())
@@ -452,7 +494,14 @@ namespace batailleNavale
                 {
                     DisplaySunk(listpositionPorteAvionToSink);
                     listPorteAvion.Add("tc");
-                    client.WriteLine("elm" + listToString(listpositionPorteAvionToSink));
+                    if (isServer)
+                    {
+                        server.BroadcastLine("elm" + listToString(listpositionPorteAvionToSink));
+                    }
+                    else
+                    {
+                        client.WriteLine("elm" + listToString(listpositionPorteAvionToSink));
+                    }
                     opponentScore += 5;
                     VerifiyVictory();
                 }
@@ -460,7 +509,14 @@ namespace batailleNavale
                 {
                     DisplaySunk(listpositionCroiseurToSink);
                     listCroiseur.Add("tc");
-                    client.WriteLine("elm" + listToString(listpositionCroiseurToSink));
+                    if (isServer)
+                    {
+                        server.BroadcastLine("elm" + listToString(listpositionCroiseurToSink));
+                    }
+                    else
+                    {
+                        client.WriteLine("elm" + listToString(listpositionCroiseurToSink));
+                    }
                     opponentScore += 5;
                     VerifiyVictory();
                 }
@@ -468,7 +524,14 @@ namespace batailleNavale
                 {
                     DisplaySunk(listpositionContreTorpilleurToSink);
                     listContreTorpilleur.Add("tc");
-                    client.WriteLine("elm" + listToString(listpositionContreTorpilleurToSink));
+                    if (isServer)
+                    {
+                        server.BroadcastLine("elm" + listToString(listpositionContreTorpilleurToSink));
+                    }
+                    else
+                    {
+                        client.WriteLine("elm" + listToString(listpositionContreTorpilleurToSink));
+                    }
                     opponentScore += 5;
                     VerifiyVictory();
                 }
@@ -476,7 +539,14 @@ namespace batailleNavale
                 {
                     DisplaySunk(listpositionSousMarinToSink);
                     listSousMarin.Add("tc");
-                    client.WriteLine("elm" + listToString(listpositionSousMarinToSink));
+                    if (isServer)
+                    {
+                        server.BroadcastLine("elm" + listToString(listpositionSousMarinToSink));
+                    }
+                    else
+                    {
+                        client.WriteLine("elm" + listToString(listpositionSousMarinToSink));
+                    }
                     opponentScore += 5;
                     VerifiyVictory();
                 }
@@ -484,7 +554,14 @@ namespace batailleNavale
                 {
                     DisplaySunk(listpositionTorpilleurToSink);
                     listTorpilleur.Add("tc");
-                    client.WriteLine("elm" + listToString(listpositionTorpilleurToSink));
+                    if (isServer)
+                    {
+                        server.BroadcastLine("elm" + listToString(listpositionTorpilleurToSink));
+                    }
+                    else
+                    {
+                        client.WriteLine("elm" + listToString(listpositionTorpilleurToSink));
+                    }
                     opponentScore += 5;
                     VerifiyVictory();
                 }
@@ -571,7 +648,15 @@ namespace batailleNavale
         {
             if (listPorteAvion.Contains("tc") && listCroiseur.Contains("tc") && listContreTorpilleur.Contains("tc") && listSousMarin.Contains("tc") && listTorpilleur.Contains("tc"))
             {
-                client.WriteLine("not" + "VICTOIRE !");
+                if (isServer)
+                {
+                    server.BroadcastLine("not" + "VICTOIRE !");
+                }
+                else
+                {
+                    client.WriteLine("not" + "VICTOIRE !");
+
+                }
                 lblMessages.Invoke((MethodInvoker)delegate ()
                 {
                     lblMessages.Text = "DÉFAITE !" + Environment.NewLine + "Pour recommencer, cliquez sur Nouvelle Partie ou cliquez sur Quitter pour quitter";
@@ -863,7 +948,14 @@ namespace batailleNavale
 
             if (btnReadyAndNewGame.Text == "Prêt")
             {
-                client.WriteLine("not" + "Prêt");
+                if (isServer)
+                {
+                    server.BroadcastLine("not" + "Prêt");
+                }
+                else
+                {
+                    client.WriteLine("not" + "Prêt");
+                }
                 lblMessages.Text = "En attente de l'autre joueur ...";
                 btnReadyAndNewGame.Text = "Nouvelle Partie";
                 btnReadyAndNewGame.Enabled = false;
@@ -1009,7 +1101,14 @@ namespace batailleNavale
                 {
                     if (opponentReady && !gameEnded)
                     {
-                        client.WriteLine("not" + "VICTOIRE !");
+                        if (isServer)
+                        {
+                            server.BroadcastLine("not" + "VICTOIRE !");
+                        }
+                        else
+                        {
+                            client.WriteLine("not" + "VICTOIRE !");
+                        }
                     }
                     closingMessageShown = true;
                     Application.Exit();
@@ -1041,13 +1140,27 @@ namespace batailleNavale
                             }
                             if (myTurn)
                             {
-                                client.WriteLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
+                                if (isServer)
+                                {
+                                    server.BroadcastLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
+                                }
+                                else
+                                {
+                                    client.WriteLine("sht" + listOfAvailableButton[randButtonIndex].Tag.ToString());
+                                }
                                 tempTag = listOfAvailableButton[randButtonIndex].Tag.ToString();
                             }
                             if (myTurn)
                             {
                                 myTurn = false;
-                                client.WriteLine("trn" + "true");
+                                if (isServer)
+                                {
+                                    server.BroadcastLine("trn" + "true");
+                                }
+                                else
+                                {
+                                    client.WriteLine("trn" + "true");
+                                }
                                 lblMessages.Text = "AU TOUR DE L'ADVERSAIRE!";
                                 listOfAvailableButton.RemoveAt(randButtonIndex);
                                 break;
@@ -1070,7 +1183,7 @@ namespace batailleNavale
         private void tsmAbout_Click(object sender, EventArgs e)
         {
             AboutBox abx = new AboutBox();
-            
+
             abx.ShowDialog();
         }
     }
