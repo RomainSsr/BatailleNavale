@@ -145,11 +145,21 @@ namespace batailleNavale
         {
             f = new frmMain(this, true);
             gbClient.Enabled = false;
+            btnStart.Enabled = false;
             tmrBroadcastIp.Start();
             lblServerStatus.Text = "Serveur Started";
             System.Net.IPAddress ip = System.Net.IPAddress.Parse(tbxLocalIp.Text);
             _server.Start(ip, Convert.ToInt32(tbxLocalPort.Text));
             _server.ClientConnected += _server_ClientConnected;
+        }
+        private void btnStopServer_Click(object sender, EventArgs e)
+        {
+            f.Dispose();
+            gbClient.Enabled = true;
+            btnStart.Enabled = true;
+            tmrBroadcastIp.Stop();
+            lblServerStatus.Text = "Serveur Stopped";
+            _server.Stop();
         }
 
         private void _server_ClientConnected(object sender, TcpClient e)
@@ -192,7 +202,7 @@ namespace batailleNavale
                 }
                 catch (Exception ex)
                 {
-                    lblError.Text = ex.ToString();
+                    //lblError.Text = ex.ToString();
                 }
             }
 
@@ -254,5 +264,6 @@ namespace batailleNavale
         {
             btnConnect.Enabled = true;
         }
+
     }
 }

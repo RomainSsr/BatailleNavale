@@ -43,14 +43,14 @@
             this.lsbAvaiableServers = new System.Windows.Forms.ListBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.tmrBroadcastIp = new System.Windows.Forms.Timer(this.components);
-            this.lblError = new System.Windows.Forms.Label();
+            this.btnStopServer = new System.Windows.Forms.Button();
             this.gbHost.SuspendLayout();
             this.gbClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(62, 122);
+            this.btnStart.Location = new System.Drawing.Point(19, 122);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 39;
@@ -60,7 +60,7 @@
             // 
             // tbxLocalPort
             // 
-            this.tbxLocalPort.Location = new System.Drawing.Point(62, 59);
+            this.tbxLocalPort.Location = new System.Drawing.Point(48, 59);
             this.tbxLocalPort.Name = "tbxLocalPort";
             this.tbxLocalPort.ReadOnly = true;
             this.tbxLocalPort.Size = new System.Drawing.Size(100, 20);
@@ -68,7 +68,7 @@
             // 
             // tbxLocalIp
             // 
-            this.tbxLocalIp.Location = new System.Drawing.Point(62, 19);
+            this.tbxLocalIp.Location = new System.Drawing.Point(48, 19);
             this.tbxLocalIp.Name = "tbxLocalIp";
             this.tbxLocalIp.ReadOnly = true;
             this.tbxLocalIp.Size = new System.Drawing.Size(100, 20);
@@ -78,7 +78,7 @@
             // lblIPHost
             // 
             this.lblIPHost.AutoSize = true;
-            this.lblIPHost.Location = new System.Drawing.Point(39, 22);
+            this.lblIPHost.Location = new System.Drawing.Point(25, 22);
             this.lblIPHost.Name = "lblIPHost";
             this.lblIPHost.Size = new System.Drawing.Size(17, 13);
             this.lblIPHost.TabIndex = 32;
@@ -86,6 +86,7 @@
             // 
             // gbHost
             // 
+            this.gbHost.Controls.Add(this.btnStopServer);
             this.gbHost.Controls.Add(this.lblServerStatus);
             this.gbHost.Controls.Add(this.lblPortHost);
             this.gbHost.Controls.Add(this.tbxLocalIp);
@@ -102,16 +103,16 @@
             // lblServerStatus
             // 
             this.lblServerStatus.AutoSize = true;
-            this.lblServerStatus.Location = new System.Drawing.Point(48, 96);
+            this.lblServerStatus.Location = new System.Drawing.Point(56, 185);
             this.lblServerStatus.Name = "lblServerStatus";
-            this.lblServerStatus.Size = new System.Drawing.Size(104, 13);
+            this.lblServerStatus.Size = new System.Drawing.Size(81, 13);
             this.lblServerStatus.TabIndex = 42;
-            this.lblServerStatus.Text = "Server unconnected";
+            this.lblServerStatus.Text = "Server Stopped";
             // 
             // lblPortHost
             // 
             this.lblPortHost.AutoSize = true;
-            this.lblPortHost.Location = new System.Drawing.Point(30, 62);
+            this.lblPortHost.Location = new System.Drawing.Point(16, 62);
             this.lblPortHost.Name = "lblPortHost";
             this.lblPortHost.Size = new System.Drawing.Size(26, 13);
             this.lblPortHost.TabIndex = 41;
@@ -185,21 +186,21 @@
             this.tmrBroadcastIp.Interval = 500;
             this.tmrBroadcastIp.Tick += new System.EventHandler(this.tmrBroadcastIp_Tick);
             // 
-            // lblError
+            // btnStopServer
             // 
-            this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(12, 232);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(35, 13);
-            this.lblError.TabIndex = 46;
-            this.lblError.Text = "label1";
+            this.btnStopServer.Location = new System.Drawing.Point(119, 122);
+            this.btnStopServer.Name = "btnStopServer";
+            this.btnStopServer.Size = new System.Drawing.Size(75, 23);
+            this.btnStopServer.TabIndex = 43;
+            this.btnStopServer.Text = "Stop Server";
+            this.btnStopServer.UseVisualStyleBackColor = true;
+            this.btnStopServer.Click += new System.EventHandler(this.btnStopServer_Click);
             // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 254);
-            this.Controls.Add(this.lblError);
+            this.ClientSize = new System.Drawing.Size(436, 232);
             this.Controls.Add(this.gbClient);
             this.Controls.Add(this.gbHost);
             this.Name = "frmConnexion";
@@ -210,7 +211,6 @@
             this.gbClient.ResumeLayout(false);
             this.gbClient.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -225,10 +225,10 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label lblServerStatus;
         private System.Windows.Forms.Timer tmrBroadcastIp;
-        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.ListBox lsbAvaiableServers;
         private System.Windows.Forms.Button btnStopListen;
         private System.Windows.Forms.Button btnStartListen;
         private System.Windows.Forms.Label lblClientInfo;
+        private System.Windows.Forms.Button btnStopServer;
     }
 }
