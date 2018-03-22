@@ -159,6 +159,20 @@ namespace batailleNavale
             btnStart.Enabled = true;
             tmrBroadcastIp.Stop();
             lblServerStatus.Text = "Serveur Stopped";
+            byte[] send_buffer = Encoding.ASCII.GetBytes("STOP");
+
+            // Remind the user of where this is going.
+            Console.WriteLine("sending to address: {0} port: {1}",
+            sending_end_point.Address,
+            sending_end_point.Port);
+            try
+            {
+                sending_socket.SendTo(send_buffer, sending_end_point);
+            }
+            catch (Exception ex)
+            {
+                //lblError.Text = ex.ToString();
+            }
             _server.Stop();
         }
 
@@ -239,21 +253,27 @@ namespace batailleNavale
                 received_data = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
                 if (received_data != "")
                 {
-
-                    bool doublon = false;
-                    foreach (var element in lsbAvaiableServers.Items)
+                    if (received_data != "STOP")
                     {
-                        if (element.ToString() == received_data)
+                        bool doublon = false;
+                        foreach (var element in lsbAvaiableServers.Items)
                         {
-                            doublon = true;
+                            if (element.ToString() == received_data)
+                            {
+                                doublon = true;
+                            }
+                        }
+                        if (!doublon)
+                        {
+                            lsbAvaiableServers.Invoke((MethodInvoker)delegate ()
+                            {
+                                lsbAvaiableServers.Items.Add(received_data);
+                            });
                         }
                     }
-                    if (!doublon)
+                    else
                     {
-                        lsbAvaiableServers.Invoke((MethodInvoker)delegate ()
-                        {
-                            lsbAvaiableServers.Items.Add(received_data);
-                        });
+                        lsbAvaiableServers.Items.Clear();
                     }
                 }
             }

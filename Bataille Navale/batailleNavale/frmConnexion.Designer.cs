@@ -188,7 +188,7 @@
             // 
             // btnStopServer
             // 
-            this.btnStopServer.Location = new System.Drawing.Point(119, 122);
+            this.btnStopServer.Location = new System.Drawing.Point(100, 122);
             this.btnStopServer.Name = "btnStopServer";
             this.btnStopServer.Size = new System.Drawing.Size(75, 23);
             this.btnStopServer.TabIndex = 43;
