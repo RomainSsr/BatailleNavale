@@ -159,7 +159,9 @@ namespace batailleNavale
             btnStart.Enabled = true;
             tmrBroadcastIp.Stop();
             lblServerStatus.Text = "Serveur Stopped";
-            byte[] send_buffer = Encoding.ASCII.GetBytes("STOP");
+            IPAddress myIP = GetLocalIPAddress();
+            string myIPString = myIP.ToString() + ";STOP";
+            byte[] send_buffer = Encoding.ASCII.GetBytes(myIPString);
 
             // Remind the user of where this is going.
             Console.WriteLine("sending to address: {0} port: {1}",
@@ -198,7 +200,7 @@ namespace batailleNavale
         private void tmrBroadcastIp_Tick(object sender, EventArgs e)
         {
             IPAddress myIP = GetLocalIPAddress();
-            string myIPString = myIP.ToString();
+            string myIPString = myIP.ToString() + ";OK";
             if (myIPString != "")
             {
 
@@ -251,14 +253,15 @@ namespace batailleNavale
                 receive_byte_array = listener.Receive(ref groupEP);
 
                 received_data = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
-                if (received_data != "")
+                string[] received_data_string = received_data.Split(';');
+                if (received_data_string[0] != "")
                 {
-                    if (received_data != "STOP")
+                    if (received_data_string[1] != "STOP")
                     {
                         bool doublon = false;
                         foreach (var element in lsbAvaiableServers.Items)
                         {
-                            if (element.ToString() == received_data)
+                            if (element.ToString() == received_data_string[0])
                             {
                                 doublon = true;
                             }
@@ -267,7 +270,7 @@ namespace batailleNavale
                         {
                             lsbAvaiableServers.Invoke((MethodInvoker)delegate ()
                             {
-                                lsbAvaiableServers.Items.Add(received_data);
+                                lsbAvaiableServers.Items.Add(received_data_string[0]);
                             });
                         }
                     }
@@ -275,8 +278,8 @@ namespace batailleNavale
                     {
                         lsbAvaiableServers.Invoke((MethodInvoker)delegate ()
                         {
-                            lsbAvaiableServers.Items.Clear();
-                        }
+                            lsbAvaiableServers.Items.Remove(received_data_string[0]);
+                        });
                     }
                 }
             }
