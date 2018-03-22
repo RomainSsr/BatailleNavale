@@ -273,7 +273,10 @@ namespace batailleNavale
                     }
                     else
                     {
-                        lsbAvaiableServers.Items.Clear();
+                        lsbAvaiableServers.Invoke((MethodInvoker)delegate ()
+                        {
+                            lsbAvaiableServers.Items.Clear();
+                        }
                     }
                 }
             }
