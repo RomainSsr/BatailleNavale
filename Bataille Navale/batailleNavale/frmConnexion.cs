@@ -181,14 +181,14 @@ namespace batailleNavale
         private void _server_ClientConnected(object sender, TcpClient e)
         {
 
+            btnStopServer.Invoke((MethodInvoker)delegate ()
+            {
+                btnStopServer.PerformClick();
+            });
             this.Invoke((MethodInvoker)delegate ()
             {
                 this.Visible = false;
                 f.Show();
-            });
-            btnStopServer.Invoke((MethodInvoker)delegate ()
-            {
-                btnStopServer.PerformClick();
             });
         }
 
