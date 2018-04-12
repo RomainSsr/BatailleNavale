@@ -87,3 +87,4 @@ C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNa
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.csproj.GenerateResource.Cache
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.exe
 C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.pdb
+C:\Users\SAUSERR_INFO\Documents\GitHub\BatailleNavale\Bataille Navale\batailleNavale\obj\Debug\batailleNavale.csproj.CoreCompileInputs.cache
