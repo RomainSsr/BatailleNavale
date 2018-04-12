@@ -181,15 +181,36 @@ namespace batailleNavale
         private void _server_ClientConnected(object sender, TcpClient e)
         {
 
-            btnStopServer.Invoke((MethodInvoker)delegate ()
-            {
-                btnStopServer.PerformClick();
-            });
+            tmrBroadcastIp.Stop();
+
+            
+            
+
             this.Invoke((MethodInvoker)delegate ()
             {
                 this.Visible = false;
                 f.Show();
             });
+        }
+
+        private void SendStop()
+        {
+            IPAddress myIP = GetLocalIPAddress();
+            string myIPString = myIP.ToString() + ";STOP";
+            byte[] send_buffer = Encoding.ASCII.GetBytes(myIPString);
+
+            Console.WriteLine("sending to address: {0} port: {1}",
+            sending_end_point.Address,
+            sending_end_point.Port);
+
+            try
+            {
+                sending_socket.SendTo(send_buffer, sending_end_point);
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.ToString();
+            }
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
