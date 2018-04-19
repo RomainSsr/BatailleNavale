@@ -25,7 +25,7 @@ namespace batailleNavale
         static private SimpleTcpClient _client;
         static private TextBox _tbxClientIp;
 
-        #region 
+        #region client
         //variables pour UDP client
         Thread firstTrhead;
         private const int listenPort = 1001;
@@ -65,7 +65,7 @@ namespace batailleNavale
         // port number. As this will be a broadcase message, I don't know what role the
         // port number plays in this.
         #endregion
-        IPEndPoint sending_end_point = new IPEndPoint(send_to_address, 1001);
+        IPEndPoint sending_end_point = new IPEndPoint(send_to_address, listenPort);
         static public TextBox TBX_IP_CLIENT
         {
             get
