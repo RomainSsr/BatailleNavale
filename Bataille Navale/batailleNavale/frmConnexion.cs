@@ -182,7 +182,7 @@ namespace batailleNavale
         {
 
             tmrBroadcastIp.Stop();
-
+            SendStop();
             
             
 
