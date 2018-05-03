@@ -45,17 +45,18 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.tmrBroadcastIp = new System.Windows.Forms.Timer(this.components);
             this.lblError = new System.Windows.Forms.Label();
+            this.chkEnableServerPortAndIP = new System.Windows.Forms.CheckBox();
             this.gbHost.SuspendLayout();
             this.gbClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(19, 122);
+            this.btnStart.Location = new System.Drawing.Point(48, 109);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(100, 23);
             this.btnStart.TabIndex = 39;
-            this.btnStart.Text = "Start Server";
+            this.btnStart.Text = "Lancer le serveur";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -99,15 +100,15 @@
             this.gbHost.Size = new System.Drawing.Size(200, 207);
             this.gbHost.TabIndex = 44;
             this.gbHost.TabStop = false;
-            this.gbHost.Text = "Host";
+            this.gbHost.Text = "Serveur";
             // 
             // btnStopServer
             // 
-            this.btnStopServer.Location = new System.Drawing.Point(100, 122);
+            this.btnStopServer.Location = new System.Drawing.Point(48, 138);
             this.btnStopServer.Name = "btnStopServer";
-            this.btnStopServer.Size = new System.Drawing.Size(75, 23);
+            this.btnStopServer.Size = new System.Drawing.Size(100, 23);
             this.btnStopServer.TabIndex = 43;
-            this.btnStopServer.Text = "Stop Server";
+            this.btnStopServer.Text = "Arrêter le serveur";
             this.btnStopServer.UseVisualStyleBackColor = true;
             this.btnStopServer.Click += new System.EventHandler(this.btnStopServer_Click);
             // 
@@ -116,9 +117,9 @@
             this.lblServerStatus.AutoSize = true;
             this.lblServerStatus.Location = new System.Drawing.Point(56, 185);
             this.lblServerStatus.Name = "lblServerStatus";
-            this.lblServerStatus.Size = new System.Drawing.Size(81, 13);
+            this.lblServerStatus.Size = new System.Drawing.Size(74, 13);
             this.lblServerStatus.TabIndex = 42;
-            this.lblServerStatus.Text = "Server Stopped";
+            this.lblServerStatus.Text = "Serveur arrêté";
             // 
             // lblPortHost
             // 
@@ -168,7 +169,7 @@
             this.btnStartListen.Name = "btnStartListen";
             this.btnStartListen.Size = new System.Drawing.Size(75, 23);
             this.btnStartListen.TabIndex = 42;
-            this.btnStartListen.Text = "Listen";
+            this.btnStartListen.Text = "Lancer";
             this.btnStartListen.UseVisualStyleBackColor = true;
             this.btnStartListen.Click += new System.EventHandler(this.btnStartListen_Click);
             // 
@@ -188,7 +189,7 @@
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(154, 23);
             this.btnConnect.TabIndex = 40;
-            this.btnConnect.Text = "Connect";
+            this.btnConnect.Text = "Se connecter";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -207,11 +208,22 @@
             this.lblError.Size = new System.Drawing.Size(0, 15);
             this.lblError.TabIndex = 46;
             // 
+            // chkEnableServerPortAndIP
+            // 
+            this.chkEnableServerPortAndIP.AutoSize = true;
+            this.chkEnableServerPortAndIP.Location = new System.Drawing.Point(12, 226);
+            this.chkEnableServerPortAndIP.Name = "chkEnableServerPortAndIP";
+            this.chkEnableServerPortAndIP.Size = new System.Drawing.Size(314, 17);
+            this.chkEnableServerPortAndIP.TabIndex = 47;
+            this.chkEnableServerPortAndIP.Text = "Modifier les champs IP et Port du serveur ( utilisateur avancé)";
+            this.chkEnableServerPortAndIP.UseVisualStyleBackColor = true;
+            // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 242);
+            this.ClientSize = new System.Drawing.Size(436, 248);
+            this.Controls.Add(this.chkEnableServerPortAndIP);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.gbClient);
             this.Controls.Add(this.gbHost);
@@ -244,5 +256,6 @@
         private System.Windows.Forms.Label lblClientInfo;
         private System.Windows.Forms.Button btnStopServer;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.CheckBox chkEnableServerPortAndIP;
     }
 }

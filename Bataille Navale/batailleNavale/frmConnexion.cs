@@ -147,7 +147,7 @@ namespace batailleNavale
             gbClient.Enabled = false;
             btnStart.Enabled = false;
             tmrBroadcastIp.Start();
-            lblServerStatus.Text = "Serveur Started";
+            lblServerStatus.Text = "Serveur lancé";
             System.Net.IPAddress ip = System.Net.IPAddress.Parse(tbxLocalIp.Text);
             _server.Start(ip, Convert.ToInt32(tbxLocalPort.Text));
             _server.ClientConnected += _server_ClientConnected;
@@ -158,22 +158,18 @@ namespace batailleNavale
             gbClient.Enabled = true;
             btnStart.Enabled = true;
             tmrBroadcastIp.Stop();
-            lblServerStatus.Text = "Serveur Stopped";
+            lblServerStatus.Text = "Serveur arrêté";
             IPAddress myIP = GetLocalIPAddress();
             string myIPString = myIP.ToString() + ";STOP";
             byte[] send_buffer = Encoding.ASCII.GetBytes(myIPString);
-
-            // Remind the user of where this is going.
-            Console.WriteLine("sending to address: {0} port: {1}",
-            sending_end_point.Address,
-            sending_end_point.Port);
+            
             try
             {
                 sending_socket.SendTo(send_buffer, sending_end_point);
             }
             catch (Exception ex)
             {
-                //lblError.Text = ex.ToString();
+                throw (ex);
             }
             _server.Stop();
         }
